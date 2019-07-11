@@ -22,6 +22,7 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
     @IBOutlet weak var txClient : UITextField?
     @IBOutlet weak var txName : UITextField?
     @IBOutlet weak var tvDescripton : UITextView?
+    @IBOutlet weak var btnSave : UIButton?
     
     var customerID : String?
     
@@ -90,6 +91,9 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
     @IBAction func btnNewSurveyClicked(sender:UIButton) {
         let alertController = UIAlertController(title: "Start New Survey", message: "You are about to create a new (empty) survey. Are You Sure?", preferredStyle: .alert)
         
+        self.btnSave?.setTitle("Start Survey", for: UIControlState.normal)
+        
+        
         alertController.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction) in
             Session.obtainSurveyID()
         }))
@@ -104,16 +108,14 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
     func surveyIDReturnedWith(data: [String : String]) {
         Session.surveyID = data["surveyID"]
         Session.surveyData!.nullifyAll()
+       
         
-        DispatchQueue.main.async {
-            let index = self.navigationController?.viewControllers[1] as! MainTVController
-            self.navigationController?.popToViewController(index as UIViewController, animated: true)
-        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.title = "Save"
+        self.btnSave?.setTitle("Save", for: UIControlState.normal)
         self.tvDescripton?.layer.borderWidth = 0.5
         self.tvDescripton?.layer.borderColor = UIColor.darkGray.cgColor
         Session.delegate = self
