@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0089B92222DFA50057517D /* MainTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0089B82222DFA50057517D /* MainTVController.swift */; };
+		1D33453D22A01B15004DB221 /* SurveyStateTBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33453C22A01B15004DB221 /* SurveyStateTBController.swift */; };
+		1D33453F22A01B57004DB221 /* SaveSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33453E22A01B57004DB221 /* SaveSurveyViewController.swift */; };
+		1D33454122A01B84004DB221 /* LoadSurveyTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33454022A01B84004DB221 /* LoadSurveyTVController.swift */; };
+		1D33454322A05C6B004DB221 /* JED-EYE Logo Fina.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D33454222A05C6B004DB221 /* JED-EYE Logo Fina.png */; };
+		1D33454722A05F72004DB221 /* Jedeye logo 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D33454422A05F72004DB221 /* Jedeye logo 120x120.png */; };
+		1D33454822A05F72004DB221 /* Jedeye logo 180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D33454522A05F72004DB221 /* Jedeye logo 180x180.png */; };
+		1D33454922A05F72004DB221 /* Jedeye logo 1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D33454622A05F72004DB221 /* Jedeye logo 1024x1024.png */; };
+		1D33454B22A2C5D1004DB221 /* SurveyTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33454A22A2C5D1004DB221 /* SurveyTypeViewController.swift */; };
+		1D3E80A622D7A04C009B5628 /* AddressDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E80A522D7A04C009B5628 /* AddressDelegate.swift */; };
+		1D5138952289A7D70010C7CD /* AsynchDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5138942289A7D70010C7CD /* AsynchDataDelegate.swift */; };
+		1D52F28C2292F6E800A43448 /* FiveHundredLbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52F28B2292F6E800A43448 /* FiveHundredLbViewController.swift */; };
+		1D52F28F22930A8500A43448 /* PowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52F28E22930A8500A43448 /* PowerViewController.swift */; };
+		1D52F29122930AC300A43448 /* MeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52F29022930AC300A43448 /* MeasurementViewController.swift */; };
+		1D52F293229326DE00A43448 /* AccessoriesTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52F292229326DE00A43448 /* AccessoriesTVController.swift */; };
+		1D52F298229430C700A43448 /* EquipmentSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52F297229430C700A43448 /* EquipmentSelectionViewController.swift */; };
+		1D52F29E2295BF1900A43448 /* ArticulatingWallHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52F29D2295BF1900A43448 /* ArticulatingWallHeightViewController.swift */; };
+		1D6D4DF422C50A5200D065EF /* fetchsurveys.php in Resources */ = {isa = PBXBuildFile; fileRef = 1D6D4DF322C50A5200D065EF /* fetchsurveys.php */; };
+		1D6D4DF622C53E2000D065EF /* fetchkvpairs.php in Resources */ = {isa = PBXBuildFile; fileRef = 1D6D4DF522C53E2000D065EF /* fetchkvpairs.php */; };
 		1D793B0D21FA07DE00E4C80C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D793B0C21FA07DE00E4C80C /* AppDelegate.swift */; };
 		1D793B0F21FA07DE00E4C80C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D793B0E21FA07DE00E4C80C /* ViewController.swift */; };
 		1D793B1221FA07DE00E4C80C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D793B1021FA07DE00E4C80C /* Main.storyboard */; };
@@ -14,6 +33,22 @@
 		1D793B1721FA07DF00E4C80C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D793B1521FA07DF00E4C80C /* LaunchScreen.storyboard */; };
 		1D793B2221FA07E000E4C80C /* jedeyeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D793B2121FA07E000E4C80C /* jedeyeTests.swift */; };
 		1D793B2D21FA07E000E4C80C /* jedeyeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D793B2C21FA07E000E4C80C /* jedeyeUITests.swift */; };
+		1D8C113922C6862600F38275 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C113822C6862600F38275 /* AddressViewController.swift */; };
+		1D8C113B22C68E9500F38275 /* savesurvey.php in Resources */ = {isa = PBXBuildFile; fileRef = 1D8C113A22C68E9500F38275 /* savesurvey.php */; };
+		1D8C114022C7B62800F38275 /* BooleanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C113F22C7B62800F38275 /* BooleanCell.swift */; };
+		1D8C114222CBA5A300F38275 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C114122CBA5A300F38275 /* DropDownCell.swift */; };
+		1D8C114422CF9AAD00F38275 /* LiftWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C114322CF9AAD00F38275 /* LiftWeightViewController.swift */; };
+		1D8C114622D5111800F38275 /* CarpenterMeasureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C114522D5111800F38275 /* CarpenterMeasureViewController.swift */; };
+		1D8C114822D51E6100F38275 /* CarpenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C114722D51E6100F38275 /* CarpenterDelegate.swift */; };
+		1D943DC82296E2630021B163 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D943DC72296E2630021B163 /* LoginViewController.swift */; };
+		1D943DCB2296FB140021B163 /* templogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D943DCA2296FB140021B163 /* templogo.png */; };
+		1D943DCD2296FD630021B163 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D943DCC2296FD630021B163 /* Session.swift */; };
+		1D95623A222704F8002AC2D4 /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D956239222704F8002AC2D4 /* NavController.swift */; };
+		1D98E4D522887D5700E3C28D /* SubtypeTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98E4D422887D5700E3C28D /* SubtypeTVController.swift */; };
+		1DCC96E322A821990053A3CE /* File in Resources */ = {isa = PBXBuildFile; fileRef = 1DCC96E222A821990053A3CE /* File */; };
+		1DE4967E22905765006BEBD5 /* MeasureOpeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE4967D22905765006BEBD5 /* MeasureOpeningViewController.swift */; };
+		1DE4968222906F49006BEBD5 /* TerrainWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE4968122906F49006BEBD5 /* TerrainWeightViewController.swift */; };
+		1DF5C13E22B527DB00219698 /* SurveyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5C13D22B527DB00219698 /* SurveyData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +69,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D0089B82222DFA50057517D /* MainTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTVController.swift; sourceTree = "<group>"; };
+		1D33453C22A01B15004DB221 /* SurveyStateTBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyStateTBController.swift; sourceTree = "<group>"; };
+		1D33453E22A01B57004DB221 /* SaveSurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSurveyViewController.swift; sourceTree = "<group>"; };
+		1D33454022A01B84004DB221 /* LoadSurveyTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadSurveyTVController.swift; sourceTree = "<group>"; };
+		1D33454222A05C6B004DB221 /* JED-EYE Logo Fina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "JED-EYE Logo Fina.png"; sourceTree = "<group>"; };
+		1D33454422A05F72004DB221 /* Jedeye logo 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jedeye logo 120x120.png"; sourceTree = "<group>"; };
+		1D33454522A05F72004DB221 /* Jedeye logo 180x180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jedeye logo 180x180.png"; sourceTree = "<group>"; };
+		1D33454622A05F72004DB221 /* Jedeye logo 1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jedeye logo 1024x1024.png"; sourceTree = "<group>"; };
+		1D33454A22A2C5D1004DB221 /* SurveyTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyTypeViewController.swift; sourceTree = "<group>"; };
+		1D3E80A522D7A04C009B5628 /* AddressDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDelegate.swift; sourceTree = "<group>"; };
+		1D5138942289A7D70010C7CD /* AsynchDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchDataDelegate.swift; sourceTree = "<group>"; };
+		1D52F28B2292F6E800A43448 /* FiveHundredLbViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveHundredLbViewController.swift; sourceTree = "<group>"; };
+		1D52F28E22930A8500A43448 /* PowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerViewController.swift; sourceTree = "<group>"; };
+		1D52F29022930AC300A43448 /* MeasurementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementViewController.swift; sourceTree = "<group>"; };
+		1D52F292229326DE00A43448 /* AccessoriesTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoriesTVController.swift; sourceTree = "<group>"; };
+		1D52F297229430C700A43448 /* EquipmentSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentSelectionViewController.swift; sourceTree = "<group>"; };
+		1D52F29D2295BF1900A43448 /* ArticulatingWallHeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticulatingWallHeightViewController.swift; sourceTree = "<group>"; };
+		1D6D4DF322C50A5200D065EF /* fetchsurveys.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = fetchsurveys.php; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.php; };
+		1D6D4DF522C53E2000D065EF /* fetchkvpairs.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = fetchkvpairs.php; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.php; };
 		1D793B0921FA07DE00E4C80C /* jedeye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jedeye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D793B0C21FA07DE00E4C80C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D793B0E21FA07DE00E4C80C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +101,22 @@
 		1D793B2821FA07E000E4C80C /* jedeyeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jedeyeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D793B2C21FA07E000E4C80C /* jedeyeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jedeyeUITests.swift; sourceTree = "<group>"; };
 		1D793B2E21FA07E000E4C80C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D8C113822C6862600F38275 /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
+		1D8C113A22C68E9500F38275 /* savesurvey.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = savesurvey.php; sourceTree = "<group>"; };
+		1D8C113F22C7B62800F38275 /* BooleanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooleanCell.swift; sourceTree = "<group>"; };
+		1D8C114122CBA5A300F38275 /* DropDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
+		1D8C114322CF9AAD00F38275 /* LiftWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftWeightViewController.swift; sourceTree = "<group>"; };
+		1D8C114522D5111800F38275 /* CarpenterMeasureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarpenterMeasureViewController.swift; sourceTree = "<group>"; };
+		1D8C114722D51E6100F38275 /* CarpenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarpenterDelegate.swift; sourceTree = "<group>"; };
+		1D943DC72296E2630021B163 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1D943DCA2296FB140021B163 /* templogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = templogo.png; sourceTree = "<group>"; };
+		1D943DCC2296FD630021B163 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		1D956239222704F8002AC2D4 /* NavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
+		1D98E4D422887D5700E3C28D /* SubtypeTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtypeTVController.swift; sourceTree = "<group>"; };
+		1DCC96E222A821990053A3CE /* File */ = {isa = PBXFileReference; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
+		1DE4967D22905765006BEBD5 /* MeasureOpeningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureOpeningViewController.swift; sourceTree = "<group>"; };
+		1DE4968122906F49006BEBD5 /* TerrainWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerrainWeightViewController.swift; sourceTree = "<group>"; };
+		1DF5C13D22B527DB00219698 /* SurveyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +144,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D0089BC2222E14C0057517D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1D5138942289A7D70010C7CD /* AsynchDataDelegate.swift */,
+				1D943DCC2296FD630021B163 /* Session.swift */,
+				1DF5C13D22B527DB00219698 /* SurveyData.swift */,
+				1D8C114722D51E6100F38275 /* CarpenterDelegate.swift */,
+				1D3E80A522D7A04C009B5628 /* AddressDelegate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D33453A22A01A52004DB221 /* Main Flow */ = {
+			isa = PBXGroup;
+			children = (
+				1D956239222704F8002AC2D4 /* NavController.swift */,
+				1D943DC72296E2630021B163 /* LoginViewController.swift */,
+				1D0089B82222DFA50057517D /* MainTVController.swift */,
+				1D98E4D422887D5700E3C28D /* SubtypeTVController.swift */,
+				1DE4967D22905765006BEBD5 /* MeasureOpeningViewController.swift */,
+				1D52F29D2295BF1900A43448 /* ArticulatingWallHeightViewController.swift */,
+				1DE4968122906F49006BEBD5 /* TerrainWeightViewController.swift */,
+				1D52F28B2292F6E800A43448 /* FiveHundredLbViewController.swift */,
+				1D52F28E22930A8500A43448 /* PowerViewController.swift */,
+				1D8C114322CF9AAD00F38275 /* LiftWeightViewController.swift */,
+				1D52F29022930AC300A43448 /* MeasurementViewController.swift */,
+				1D52F292229326DE00A43448 /* AccessoriesTVController.swift */,
+				1D52F297229430C700A43448 /* EquipmentSelectionViewController.swift */,
+				1D8C114522D5111800F38275 /* CarpenterMeasureViewController.swift */,
+				1D793B1521FA07DF00E4C80C /* LaunchScreen.storyboard */,
+			);
+			path = "Main Flow";
+			sourceTree = "<group>";
+		};
+		1D33453B22A01AD6004DB221 /* SurveyState */ = {
+			isa = PBXGroup;
+			children = (
+				1D33453C22A01B15004DB221 /* SurveyStateTBController.swift */,
+				1D33454022A01B84004DB221 /* LoadSurveyTVController.swift */,
+				1D33453E22A01B57004DB221 /* SaveSurveyViewController.swift */,
+				1D33454A22A2C5D1004DB221 /* SurveyTypeViewController.swift */,
+				1D8C113822C6862600F38275 /* AddressViewController.swift */,
+			);
+			path = SurveyState;
+			sourceTree = "<group>";
+		};
+		1D6D4DF022C509F300D065EF /* phpedit */ = {
+			isa = PBXGroup;
+			children = (
+				1D6D4DF322C50A5200D065EF /* fetchsurveys.php */,
+				1D6D4DF522C53E2000D065EF /* fetchkvpairs.php */,
+				1D8C113A22C68E9500F38275 /* savesurvey.php */,
+			);
+			path = phpedit;
+			sourceTree = "<group>";
+		};
 		1D793B0021FA07DE00E4C80C = {
 			isa = PBXGroup;
 			children = (
+				1DCC96E222A821990053A3CE /* File */,
 				1D793B0B21FA07DE00E4C80C /* jedeye */,
 				1D793B2021FA07E000E4C80C /* jedeyeTests */,
 				1D793B2B21FA07E000E4C80C /* jedeyeUITests */,
@@ -97,11 +224,16 @@
 		1D793B0B21FA07DE00E4C80C /* jedeye */ = {
 			isa = PBXGroup;
 			children = (
+				1D8C113E22C7B5F100F38275 /* CustomCells */,
+				1D6D4DF022C509F300D065EF /* phpedit */,
+				1D943DC92296FAC70021B163 /* Images */,
+				1D0089BC2222E14C0057517D /* Model */,
+				1D33453A22A01A52004DB221 /* Main Flow */,
+				1D33453B22A01AD6004DB221 /* SurveyState */,
 				1D793B0C21FA07DE00E4C80C /* AppDelegate.swift */,
 				1D793B0E21FA07DE00E4C80C /* ViewController.swift */,
 				1D793B1021FA07DE00E4C80C /* Main.storyboard */,
 				1D793B1321FA07DF00E4C80C /* Assets.xcassets */,
-				1D793B1521FA07DF00E4C80C /* LaunchScreen.storyboard */,
 				1D793B1821FA07DF00E4C80C /* Info.plist */,
 			);
 			path = jedeye;
@@ -123,6 +255,27 @@
 				1D793B2E21FA07E000E4C80C /* Info.plist */,
 			);
 			path = jedeyeUITests;
+			sourceTree = "<group>";
+		};
+		1D8C113E22C7B5F100F38275 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				1D8C113F22C7B62800F38275 /* BooleanCell.swift */,
+				1D8C114122CBA5A300F38275 /* DropDownCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		1D943DC92296FAC70021B163 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1D33454422A05F72004DB221 /* Jedeye logo 120x120.png */,
+				1D33454522A05F72004DB221 /* Jedeye logo 180x180.png */,
+				1D33454622A05F72004DB221 /* Jedeye logo 1024x1024.png */,
+				1D33454222A05C6B004DB221 /* JED-EYE Logo Fina.png */,
+				1D943DCA2296FB140021B163 /* templogo.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,13 +346,16 @@
 				TargetAttributes = {
 					1D793B0821FA07DE00E4C80C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					1D793B1C21FA07E000E4C80C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 1D793B0821FA07DE00E4C80C;
 					};
 					1D793B2721FA07E000E4C80C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 1D793B0821FA07DE00E4C80C;
 					};
 				};
@@ -230,8 +386,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D793B1721FA07DF00E4C80C /* LaunchScreen.storyboard in Resources */,
+				1D33454922A05F72004DB221 /* Jedeye logo 1024x1024.png in Resources */,
 				1D793B1421FA07DF00E4C80C /* Assets.xcassets in Resources */,
+				1D943DCB2296FB140021B163 /* templogo.png in Resources */,
+				1D33454722A05F72004DB221 /* Jedeye logo 120x120.png in Resources */,
+				1D8C113B22C68E9500F38275 /* savesurvey.php in Resources */,
+				1D6D4DF422C50A5200D065EF /* fetchsurveys.php in Resources */,
+				1D6D4DF622C53E2000D065EF /* fetchkvpairs.php in Resources */,
 				1D793B1221FA07DE00E4C80C /* Main.storyboard in Resources */,
+				1D33454322A05C6B004DB221 /* JED-EYE Logo Fina.png in Resources */,
+				1D33454822A05F72004DB221 /* Jedeye logo 180x180.png in Resources */,
+				1DCC96E322A821990053A3CE /* File in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +421,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D943DCD2296FD630021B163 /* Session.swift in Sources */,
+				1D8C114422CF9AAD00F38275 /* LiftWeightViewController.swift in Sources */,
+				1D52F293229326DE00A43448 /* AccessoriesTVController.swift in Sources */,
+				1DE4968222906F49006BEBD5 /* TerrainWeightViewController.swift in Sources */,
+				1D95623A222704F8002AC2D4 /* NavController.swift in Sources */,
+				1D3E80A622D7A04C009B5628 /* AddressDelegate.swift in Sources */,
+				1D52F29122930AC300A43448 /* MeasurementViewController.swift in Sources */,
+				1D8C114822D51E6100F38275 /* CarpenterDelegate.swift in Sources */,
+				1D943DC82296E2630021B163 /* LoginViewController.swift in Sources */,
+				1D8C114222CBA5A300F38275 /* DropDownCell.swift in Sources */,
+				1D8C114622D5111800F38275 /* CarpenterMeasureViewController.swift in Sources */,
+				1D8C113922C6862600F38275 /* AddressViewController.swift in Sources */,
+				1DE4967E22905765006BEBD5 /* MeasureOpeningViewController.swift in Sources */,
+				1D0089B92222DFA50057517D /* MainTVController.swift in Sources */,
+				1DF5C13E22B527DB00219698 /* SurveyData.swift in Sources */,
+				1D33454122A01B84004DB221 /* LoadSurveyTVController.swift in Sources */,
+				1D8C114022C7B62800F38275 /* BooleanCell.swift in Sources */,
+				1D33454B22A2C5D1004DB221 /* SurveyTypeViewController.swift in Sources */,
+				1D98E4D522887D5700E3C28D /* SubtypeTVController.swift in Sources */,
+				1D52F29E2295BF1900A43448 /* ArticulatingWallHeightViewController.swift in Sources */,
+				1D5138952289A7D70010C7CD /* AsynchDataDelegate.swift in Sources */,
+				1D52F28C2292F6E800A43448 /* FiveHundredLbViewController.swift in Sources */,
+				1D52F28F22930A8500A43448 /* PowerViewController.swift in Sources */,
+				1D33453F22A01B57004DB221 /* SaveSurveyViewController.swift in Sources */,
 				1D793B0F21FA07DE00E4C80C /* ViewController.swift in Sources */,
+				1D33453D22A01B15004DB221 /* SurveyStateTBController.swift in Sources */,
+				1D52F298229430C700A43448 /* EquipmentSelectionViewController.swift in Sources */,
 				1D793B0D21FA07DE00E4C80C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,8 +623,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3S6A928SW3;
 				INFOPLIST_FILE = jedeye/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -443,7 +635,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.datacom.jedeye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -452,8 +644,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3S6A928SW3;
 				INFOPLIST_FILE = jedeye/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -463,7 +656,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.datacom.jedeye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -482,7 +675,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.datacom.jedeyeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jedeye.app/jedeye";
 			};
@@ -502,7 +695,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.datacom.jedeyeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jedeye.app/jedeye";
 			};
@@ -521,7 +714,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.datacom.jedeyeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = jedeye;
 			};
@@ -540,7 +733,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.datacom.jedeyeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = jedeye;
 			};
