@@ -69,7 +69,7 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
             //there is a customer id. If not, make a customer id
             //for this record:
             if self.customerID == nil {
-                self.customerID = "contractor_" + Session.surveyID!
+                self.customerID = "NULL"
             }
             Session.surveyData!.contractorid = self.customerID!
         
