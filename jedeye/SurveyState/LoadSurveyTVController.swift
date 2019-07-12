@@ -11,6 +11,8 @@ import UIKit
 class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
     
     var userSurveyList : EntryType? = [:]
+    var sectionedList : [String:[String]] = [:]
+    var tableList : [String:[(site:String, contractor:String)]] = [:]
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -29,29 +31,84 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
     
     func surveyListReturnedWith(data: EntryType) {
         self.userSurveyList = data
+        //sectionedList is to make the index elements easier
+        for (k, a) in self.userSurveyList! {
+            self.sectionedList[k] = ([a["s_lname"], a["c_lname"]] as! [String])
+        }
+        //print(self.sectionedList)
+
+        //build the table view hierarchy:
+        
+        var bag: Set<String> = []
+        for (k, _) in self.sectionedList {
+            let sitename = self.sectionedList[k]![0] //s_lname
+            let firstcharofsite = String(sitename.dropLast(sitename.count - 1))
+            bag.insert(firstcharofsite)
+        }
+        //print(bag)
+        for s in bag {
+            for (_, v) in self.sectionedList {
+                //if s == the first letter of self.sectionedList[k][0]
+                let sitename = v[0] //s_lname
+                let conname = v[1] //c_lname
+                let firstcharofsite = String(sitename.dropLast(sitename.count - 1))
+                if s == firstcharofsite {
+                    print("&&Match: \(s) == \(firstcharofsite)")
+                    if self.tableList[s]?.isEmpty ?? true {
+                        self.tableList[s] = [(site: sitename, contractor: conname)]
+                    } else {
+                        self.tableList[s]?.append((site: sitename, contractor: conname))
+                    }
+                }
+            }
+        }
+        //print(self.tableList)
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        return self.tableList.keys.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return self.userSurveyList!.count
+        let sortedKeys = Array(self.tableList.keys).sorted()
+        let sectionrows = self.tableList[sortedKeys[section]]
+        
+        return sectionrows!.count
     }
-
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sortedKeys = Array(self.tableList.keys).sorted()
+        return sortedKeys[section]
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        var bag: Set<String> = []
+        var retVal : [String]?
+        for k in self.sectionedList.keys {
+            //print(k)
+            let sitename = self.sectionedList[k]![0] //s_lname
+            let firstcharofsite = String(sitename.dropLast(sitename.count - 1))
+            bag.insert(firstcharofsite)
+        }
+        retVal = Array(bag)
+        return retVal?.sorted()
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LoadCell", for: indexPath)
         
-        let listKeys = Array(self.userSurveyList!.keys).sorted()
-        let currentKey = listKeys[indexPath.row]
-        cell.textLabel!.text = self.userSurveyList![currentKey]!["s_lname"]
-        cell.detailTextLabel!.text = self.userSurveyList![currentKey]!["c_lname"]
+        let sortedSectionTitles = Array(self.tableList.keys).sorted()
+        //sectioncellinfo is an array of tuple of site, contractor
+        let sectioncellinfo = self.tableList[sortedSectionTitles[indexPath.section]]
+        let thiscellinfo = sectioncellinfo![indexPath.row]
+        let sitetext = thiscellinfo.site
+        let contractortext = thiscellinfo.contractor
+        
+        cell.textLabel!.text = sitetext
+        cell.detailTextLabel!.text = contractortext
 
         return cell
     }
