@@ -10,9 +10,6 @@ import UIKit
 
 class TerrainWeightViewController: UIViewController {
     
-    //var survey : Survey?
-    //var navController : NavController?
-    
     var promptText : String?
     @IBOutlet weak var prompt : UILabel?
     
@@ -38,7 +35,6 @@ class TerrainWeightViewController: UIViewController {
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         Session.addToEquipmentSelectionDict(id:"TerWeight", value: self.txTerrainWeight!.text!)
         Session.setKVPair(key: "TerWeight", value: self.txTerrainWeight!.text!)
@@ -54,8 +50,5 @@ class TerrainWeightViewController: UIViewController {
         default:
             print("&&No Such Segue")
         }
-        
     }
-    
-
 }

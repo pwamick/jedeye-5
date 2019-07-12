@@ -20,11 +20,8 @@ class LiftWeightViewController: UIViewController {
         self.lbPrompt!.text = promptText!
     }
     
-
-    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         Session.addToEquipmentSelectionDict(id: "LiftWeight", value: self.txWeight!.text!)
         Session.setKVPair(key: "LiftWeight", value: self.txWeight!.text!)
@@ -32,6 +29,4 @@ class LiftWeightViewController: UIViewController {
         let nextOrdPos = "60"
         destVC!.promptText = Session.getFieldDataFrom(Session.questions!, ordinalPosition: nextOrdPos, colName: "description")
     }
-    
-
 }

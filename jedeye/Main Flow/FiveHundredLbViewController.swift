@@ -10,8 +10,6 @@ import UIKit
 
 class FiveHundredLbViewController: UIViewController {
     
-    //var survey : Survey?
-    //var navController : NavController?
     var pvc : PowerViewController?
     var mvc : MeasurementViewController?
     
@@ -51,11 +49,8 @@ class FiveHundredLbViewController: UIViewController {
         }
     }
     
-
-    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "MeasurementSegue":
@@ -69,9 +64,5 @@ class FiveHundredLbViewController: UIViewController {
         default:
             print("&&Non-Existant Segue ID")
         }
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    
-
 }

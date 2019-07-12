@@ -11,8 +11,6 @@ import UIKit
 class ArticulatingWallHeightViewController: UIViewController, CarpenterDelegate {
     
     var promptText : String?
-    //var survey : Survey?
-    //var navController : NavController?
     
     @IBOutlet weak var prompt : UILabel?
     @IBOutlet weak var txHeight : UITextField?
@@ -34,7 +32,6 @@ class ArticulatingWallHeightViewController: UIViewController, CarpenterDelegate 
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "WallOutSegue":
@@ -51,6 +48,4 @@ class ArticulatingWallHeightViewController: UIViewController, CarpenterDelegate 
             print("&&Non-Existant Segue ID")
         }
     }
-    
-
 }

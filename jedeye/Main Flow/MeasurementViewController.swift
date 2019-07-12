@@ -10,9 +10,6 @@ import UIKit
 
 class MeasurementViewController: UIViewController, CarpenterDelegate {
     
-    //var survey : Survey?
-    //var navController : NavController?
-    
     var promptText : String?
     @IBOutlet weak var prompt : UILabel?
     @IBOutlet weak var txDistance : UITextField?
@@ -21,8 +18,6 @@ class MeasurementViewController: UIViewController, CarpenterDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = "Measurement"
-        //self.navController = self.navigationController as? NavController
-        //self.survey = self.navController?.survey
         self.prompt?.text = promptText
         //for a scissor lift, the angle is always 90, set and disable:
         if Session.getSelection()["Type"] as! String == "Scissor Lift" {
@@ -102,8 +97,5 @@ class MeasurementViewController: UIViewController, CarpenterDelegate {
         default:
             print("&&Non-Existant Segue ID")
         }
-        
     }
-    
-
 }

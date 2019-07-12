@@ -10,8 +10,6 @@ import UIKit
 
 class MainTVController: UITableViewController, AsynchDataDelegate {
     
-    //var navController : NavController?
-    //var survey : Survey?
     var questions : [String:[String:String]] = [:]
     var displayStrings : [String] = [] // for sorting
     var subtypes : [String:[String:String]] = [:]
@@ -22,8 +20,6 @@ class MainTVController: UITableViewController, AsynchDataDelegate {
         super.viewWillAppear(animated)
         Session.delegate = self
         Session.getSurvey()
-        
-        //self.questions = (Session.getQuestionsHaving(sourceType: "categories"))
     }
     
     func sessionReturnedWith(data: EntryType) {
@@ -39,12 +35,10 @@ class MainTVController: UITableViewController, AsynchDataDelegate {
         }
     }
     
-    //test
     func surveyIDReturnedWith(data: [String : String]) {
         Session.surveyID = data["surveyid"]
         //print("&&SURVEYID: " + Session.surveyID!)
     }
-    //
     
     func singlePairSetWithResponse(data: String) {
         //print("&&Single pair set. Message from php: \(data)")
@@ -64,7 +58,6 @@ class MainTVController: UITableViewController, AsynchDataDelegate {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.headerText
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -76,46 +69,9 @@ class MainTVController: UITableViewController, AsynchDataDelegate {
                 cell.accessoryType = .checkmark
             }
         }
-        
         return cell
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         if cell?.textLabel!.text == "Telehandler" {
@@ -127,7 +83,6 @@ class MainTVController: UITableViewController, AsynchDataDelegate {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         switch segue.identifier {
@@ -150,8 +105,5 @@ class MainTVController: UITableViewController, AsynchDataDelegate {
         default :
             print("Non-Existant Segue Identifier")
         }
-        
     }
-    
-
 }

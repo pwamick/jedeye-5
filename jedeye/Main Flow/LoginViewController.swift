@@ -10,9 +10,6 @@ import UIKit
 
 class LoginViewController: UIViewController, AsynchDataDelegate {
     
-    //var navController : NavController?
-    //var survey : Survey?
-    
     let defaults = UserDefaults.standard
     
     var validationSuccessful : Bool = false
@@ -114,14 +111,7 @@ class LoginViewController: UIViewController, AsynchDataDelegate {
             }
         }
     }
-    /*
-    //test
-    func surveyIDReturnedWith(data: [String : String]) {
-        Session.surveyData?.surveyid = data["surveyid"]!
-        print("&&SURVEYID: " + Session.surveyData!.surveyid)
-    }
-    //
-    */
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -150,7 +140,7 @@ class LoginViewController: UIViewController, AsynchDataDelegate {
     }
 
     func shakeView(_ v:UIView) {
-        /*
+        
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = 0.12
         animation.repeatCount = 3
@@ -160,7 +150,7 @@ class LoginViewController: UIViewController, AsynchDataDelegate {
         animation.fromValue = NSValue(cgPoint: CGPoint(x: v.center.x - 7, y: v.center.y))
         animation.toValue = NSValue(cgPoint: CGPoint(x: v.center.x + 7, y: v.center.y))
         v.layer.add(animation, forKey: nil)
-         */
+         
     }
     
     func parseMessageAsInt(_ message: String) -> Int? {

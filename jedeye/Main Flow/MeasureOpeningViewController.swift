@@ -12,13 +12,10 @@ class MeasureOpeningViewController: UIViewController, CarpenterDelegate {
     
     var measureType : String?
     var promptText : String?
-    //var survey : Survey?
-    //var navController : NavController?
     
     @IBOutlet weak var prompt : UILabel?
     @IBOutlet weak var txWidth : UITextField?
     @IBOutlet weak var txHeight : UITextField?
-    
     
     @IBAction func measureButton(sender:UIButton) {
         switch sender.tag {
@@ -68,18 +65,8 @@ class MeasureOpeningViewController: UIViewController, CarpenterDelegate {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        /*
-        case "widthMeasure":
-            let destVC = segue.destination as? TakeOpeningMeasureViewController
-            destVC?.measureWidth = true
-            
-        case "heightMeasure":
-            let destVC = segue.destination as? TakeOpeningMeasureViewController
-            destVC?.measureHeight = true
-        */
         case "terrainWeight":
             let destVC = segue.destination as? TerrainWeightViewController
             let nextOrdPos = "40"
@@ -100,6 +87,4 @@ class MeasureOpeningViewController: UIViewController, CarpenterDelegate {
             print("&&no such segue")
         }
     }
-    
-
 }

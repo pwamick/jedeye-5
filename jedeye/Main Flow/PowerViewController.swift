@@ -10,8 +10,6 @@ import UIKit
 
 class PowerViewController: UIViewController {
     
-    //var survey : Survey?
-    //var navController : NavController?
     var promptText : String?
     
     @IBOutlet weak var prompt : UILabel?
@@ -29,11 +27,8 @@ class PowerViewController: UIViewController {
         }
     }
     
-
-    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "PowerSetSegue":
@@ -52,6 +47,4 @@ class PowerViewController: UIViewController {
             print("&&Unknown Segue ID")
         }
     }
-    
-
 }
