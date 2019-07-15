@@ -351,7 +351,9 @@ class Session : NSObject {
         let mdate = mindate.replacingOccurrences(of: " ", with: "+")
         let strURL = self.appSettings!["URL"]! + "fetchsurveys.php?emptkey=\(forUser)&status=\(filter)&" +
             "history=\(history)&mindate=\(mdate)"
-        //print("&&Query:\(strURL)")
+        
+        print("&&Query:\(strURL)")
+        
         let url = URL(string: strURL)!
         URLSession.shared.dataTask(with: url, completionHandler: { data, response, error -> Void in
             //print("&&Survey: in completion handler")

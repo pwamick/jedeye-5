@@ -26,6 +26,7 @@
 		1D52F29E2295BF1900A43448 /* ArticulatingWallHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52F29D2295BF1900A43448 /* ArticulatingWallHeightViewController.swift */; };
 		1D6D4DF422C50A5200D065EF /* fetchsurveys.php in Resources */ = {isa = PBXBuildFile; fileRef = 1D6D4DF322C50A5200D065EF /* fetchsurveys.php */; };
 		1D6D4DF622C53E2000D065EF /* fetchkvpairs.php in Resources */ = {isa = PBXBuildFile; fileRef = 1D6D4DF522C53E2000D065EF /* fetchkvpairs.php */; };
+		1D73A28522DCD779008255D5 /* LoadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73A28422DCD779008255D5 /* LoadViewCell.swift */; };
 		1D793B0D21FA07DE00E4C80C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D793B0C21FA07DE00E4C80C /* AppDelegate.swift */; };
 		1D793B0F21FA07DE00E4C80C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D793B0E21FA07DE00E4C80C /* ViewController.swift */; };
 		1D793B1221FA07DE00E4C80C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D793B1021FA07DE00E4C80C /* Main.storyboard */; };
@@ -88,6 +89,7 @@
 		1D52F29D2295BF1900A43448 /* ArticulatingWallHeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticulatingWallHeightViewController.swift; sourceTree = "<group>"; };
 		1D6D4DF322C50A5200D065EF /* fetchsurveys.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = fetchsurveys.php; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.php; };
 		1D6D4DF522C53E2000D065EF /* fetchkvpairs.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = fetchkvpairs.php; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.php; };
+		1D73A28422DCD779008255D5 /* LoadViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewCell.swift; sourceTree = "<group>"; };
 		1D793B0921FA07DE00E4C80C /* jedeye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jedeye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D793B0C21FA07DE00E4C80C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D793B0E21FA07DE00E4C80C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			children = (
 				1D8C113F22C7B62800F38275 /* BooleanCell.swift */,
 				1D8C114122CBA5A300F38275 /* DropDownCell.swift */,
+				1D73A28422DCD779008255D5 /* LoadViewCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				1D8C114822D51E6100F38275 /* CarpenterDelegate.swift in Sources */,
 				1D943DC82296E2630021B163 /* LoginViewController.swift in Sources */,
 				1D8C114222CBA5A300F38275 /* DropDownCell.swift in Sources */,
+				1D73A28522DCD779008255D5 /* LoadViewCell.swift in Sources */,
 				1D8C114622D5111800F38275 /* CarpenterMeasureViewController.swift in Sources */,
 				1D8C113922C6862600F38275 /* AddressViewController.swift in Sources */,
 				1DE4967E22905765006BEBD5 /* MeasureOpeningViewController.swift in Sources */,

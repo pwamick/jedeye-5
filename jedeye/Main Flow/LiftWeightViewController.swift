@@ -18,6 +18,10 @@ class LiftWeightViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.lbPrompt!.text = promptText!
+        
+        if let lweight = Session.surveyData?.surveySelections["LiftWeight"] {
+            self.txWeight?.text = (lweight as! String)
+        }
     }
     
     // MARK: - Navigation

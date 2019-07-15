@@ -24,6 +24,14 @@ class MeasurementViewController: UIViewController, CarpenterDelegate {
             self.txAngle!.text = "90.0"
             self.txAngle!.isEnabled = false
         }
+        
+        if let distance = Session.surveyData?.surveySelections["MeasDistance"] {
+            self.txDistance?.text = (distance as! String)
+        }
+        
+        if let angle = Session.surveyData?.surveySelections["MeasAngle"] {
+            self.txAngle?.text = (angle as! String)
+        }
     }
     
     func DecimalMeasureReady(withMeasure: Double, BackID: String) {

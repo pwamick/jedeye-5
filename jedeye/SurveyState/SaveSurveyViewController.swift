@@ -91,7 +91,7 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
     @IBAction func btnNewSurveyClicked(sender:UIButton) {
         let alertController = UIAlertController(title: "Start New Survey", message: "You are about to create a new (empty) survey. Are You Sure?", preferredStyle: .alert)
         
-        self.btnSave?.setTitle("Start Survey", for: UIControlState.normal)
+        self.btnSave?.setTitle("Start Survey", for: UIControl.State.normal)
         
         
         alertController.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction) in
@@ -115,7 +115,7 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.title = "Save"
-        self.btnSave?.setTitle("Save", for: UIControlState.normal)
+        self.btnSave?.setTitle("Save", for: UIControl.State.normal)
         self.tvDescripton?.layer.borderWidth = 0.5
         self.tvDescripton?.layer.borderColor = UIColor.darkGray.cgColor
         Session.delegate = self

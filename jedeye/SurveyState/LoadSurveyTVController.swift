@@ -12,7 +12,7 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
     
     var userSurveyList : EntryType? = [:]
     var sectionedList : [String:[String]] = [:]
-    var tableList : [String:[(site:String, contractor:String)]] = [:]
+    var tableList : [String:[(site:String, contractor:String, wonum:String)]] = [:]
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -20,11 +20,6 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
         Session.delegate = self
         Session.getSurveyList(forUser: Session.usertkey!, filter: "o", history:"0", mindate:"2019-01-01 00:00:00")
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -33,7 +28,11 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
         self.userSurveyList = data
         //sectionedList is to make the index elements easier
         for (k, a) in self.userSurveyList! {
-            self.sectionedList[k] = ([a["s_lname"], a["c_lname"]] as! [String])
+            self.sectionedList[k] = ([
+                a["s_lname"],
+                a["c_lname"],
+                a["workorderno"]
+            ] as! [String])
         }
         //print(self.sectionedList)
 
@@ -45,24 +44,25 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
             let firstcharofsite = String(sitename.dropLast(sitename.count - 1))
             bag.insert(firstcharofsite)
         }
-        //print(bag)
+        print(bag)
         for s in bag {
             for (_, v) in self.sectionedList {
                 //if s == the first letter of self.sectionedList[k][0]
                 let sitename = v[0] //s_lname
                 let conname = v[1] //c_lname
+                let wonum = v[2] //workorderno
                 let firstcharofsite = String(sitename.dropLast(sitename.count - 1))
                 if s == firstcharofsite {
                     print("&&Match: \(s) == \(firstcharofsite)")
                     if self.tableList[s]?.isEmpty ?? true {
-                        self.tableList[s] = [(site: sitename, contractor: conname)]
+                        self.tableList[s] = [(site: sitename, contractor: conname, wonum:wonum)]
                     } else {
-                        self.tableList[s]?.append((site: sitename, contractor: conname))
+                        self.tableList[s]?.append((site: sitename, contractor: conname, wonum:wonum))
                     }
                 }
             }
         }
-        //print(self.tableList)
+        print(self.tableList)
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -70,19 +70,26 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return self.tableList.keys.count
+        //return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         let sortedKeys = Array(self.tableList.keys).sorted()
         let sectionrows = self.tableList[sortedKeys[section]]
         
         return sectionrows!.count
+        
+        //return self.userSurveyList!.count
     }
+    
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let sortedKeys = Array(self.tableList.keys).sorted()
         return sortedKeys[section]
     }
+ 
+    
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         var bag: Set<String> = []
@@ -96,43 +103,54 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
         retVal = Array(bag)
         return retVal?.sorted()
     }
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LoadCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LoadCell", for: indexPath) as! LoadViewCell
         
         let sortedSectionTitles = Array(self.tableList.keys).sorted()
-        //sectioncellinfo is an array of tuple of site, contractor
+        //sectioncellinfo is an array of tuple of site, contractor, wonum
         let sectioncellinfo = self.tableList[sortedSectionTitles[indexPath.section]]
         let thiscellinfo = sectioncellinfo![indexPath.row]
         let sitetext = thiscellinfo.site
         let contractortext = thiscellinfo.contractor
-        
-        cell.textLabel!.text = sitetext
-        cell.detailTextLabel!.text = contractortext
+        let workordernumber = thiscellinfo.wonum
+        /*
+        // non-hierarchical view
+        let sortedKeys = Array(self.userSurveyList!.keys).sorted()
+        let sitetext = self.userSurveyList![sortedKeys[indexPath.row]]!["s_lname"]
+        let contractortext = self.userSurveyList![sortedKeys[indexPath.row]]!["c_lname"]
+        */
+        cell.lbSiteName!.text = sitetext
+        cell.lbContractor!.text = contractortext
+        cell.workOrderNo = workordernumber
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let listKeys = Array(self.userSurveyList!.keys).sorted()
-        let currentKey = listKeys[indexPath.row]
-        print("&&Loading Survey No. \(userSurveyList![currentKey]!["workorderno"]!)")
+        //let listKeys = Array(self.userSurveyList!.keys).sorted()
+        //let currentKey = listKeys[indexPath.row]
         
-        let selectedCell = tableView.cellForRow(at: indexPath)
-        let siteName = selectedCell?.detailTextLabel?.text
+        
+        let selectedCell = tableView.cellForRow(at: indexPath) as! LoadViewCell
+        let currentKey = selectedCell.workOrderNo
+        print("&&\(currentKey!)")
+        print("&&Loading Survey No. \(userSurveyList![currentKey!]!["workorderno"]!)")
+        let siteName = selectedCell.lbSiteName?.text
         
         //give the user the opportunity to save the current session:
         let alertController = UIAlertController(title: "Save Session?", message: "Would you like to save the current session before loading \"\(siteName!)?\"", preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
             Session.saveSurvey(surveyType: "NULL")
-            self.copySurveyData(currentKey:currentKey)
+            self.copySurveyData(currentKey:currentKey!)
             //this will fire the kvpairsfetched delegate method of Session:
             Session.fetchKVPairs()
         }))
         
         alertController.addAction(UIAlertAction(title: "No", style: .default, handler: { (action: UIAlertAction) in
-            self.copySurveyData(currentKey: currentKey)
+            self.copySurveyData(currentKey: currentKey!)
             //this will fire the kvpairsfetched delegate method of Session:
             Session.fetchKVPairs()
         }))
