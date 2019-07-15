@@ -18,13 +18,24 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
     
     var tvData : [String:String] = [:]
     
+    @IBOutlet weak var lbSiteProj : UILabel?
     @IBOutlet weak var tableview : UITableView?
     @IBOutlet weak var txClient : UITextField?
     @IBOutlet weak var txName : UITextField?
     @IBOutlet weak var tvDescripton : UITextView?
     @IBOutlet weak var btnSave : UIButton?
+    @IBOutlet weak var swSiteProj : UISwitch?
     
     var customerID : String?
+    
+    @IBAction func swSiteProjChanged(sender: UISwitch){
+        self.tableview?.isHidden = true
+        if sender.isOn {
+            self.lbSiteProj?.text = "Project Name"
+        } else {
+            self.lbSiteProj?.text = "Site Name"
+        }
+    }
     
     @IBAction func txFieldEditingDidEnd(sender: UITextField) {
         //traps return in keyboard
@@ -47,7 +58,12 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
         self.tableview!.tag = PROJECT
         self.txName?.resignFirstResponder()
         self.txName?.text = ""
-        Session.surveyTypeDropDownContent(custType: "Project")
+        //either project or site, depends on switch.
+        var ctype = "site"
+        if swSiteProj!.isOn {
+            ctype = "project"
+        }
+        Session.surveyTypeDropDownContent(custType: ctype)
     }
     
     @IBAction func btnClientListDiscloseClick(sender:UIButton) {
@@ -59,9 +75,12 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
     
     @IBAction func saveButtonClicked(sender:UIButton) {
         if txName!.text != "" && txClient!.text != "" {
-            let clientText = Session.percentEncode(self.txClient!.text!)
-            let nameText = Session.percentEncode(self.txName!.text!)
+            var clientText = Session.percentEncode(self.txClient!.text!)
+            var nameText = Session.percentEncode(self.txName!.text!)
             let descText = Session.percentEncode(self.tvDescripton!.text!)
+            
+            clientText = clientText.prefix(1).uppercased() + clientText.lowercased().dropFirst()
+            nameText = nameText.prefix(1).uppercased() + nameText.lowercased().dropFirst()
         
             Session.surveyData!.c_lname = clientText
             Session.surveyData!.s_lname = nameText
@@ -74,7 +93,8 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
             }
             Session.surveyData!.contractorid = self.customerID!
         
-            Session.saveSurvey(surveyType:"adhoc")
+            Session.saveSurvey(surveyType:"adhoc") //not yet
+            
         } else {
             txClient!.resignFirstResponder()
             txName!.resignFirstResponder()
@@ -108,8 +128,6 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
     func surveyIDReturnedWith(data: [String : String]) {
         Session.surveyID = data["surveyID"]
         Session.surveyData!.nullifyAll()
-       
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -154,10 +172,14 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableview?.dequeueReusableCell(withIdentifier: "adhocdropdown", for: indexPath) as? DropDownCell
         let stKeys = Array(self.tvData.keys).sorted()
-        cell?.lbName!.text = self.tvData[stKeys[indexPath.row]]
-        cell?.id = stKeys[indexPath.row]
+        var celltext = stKeys[indexPath.row]
+        let arrLname = celltext.components(separatedBy: "~")
+        celltext = arrLname[0]
+        cell?.lbName!.text = celltext
+        cell?.id = self.tvData[stKeys[indexPath.row]]
         return cell!
     }
     

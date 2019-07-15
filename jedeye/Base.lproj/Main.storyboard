@@ -859,10 +859,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Site / Project Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bm7-7K-qFh">
-                                <rect key="frame" x="16" y="94" width="343" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Site Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bm7-7K-qFh">
+                                <rect key="frame" x="16" y="91" width="251" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="wev-ce-dkd"/>
+                                    <constraint firstAttribute="height" constant="44" id="wev-ce-dkd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -982,6 +982,15 @@
                                     <action selector="btnNewSurveyClickedWithSender:" destination="Tk5-DR-xtG" eventType="touchUpInside" id="bGd-Ze-Cm3"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AkP-pw-HzZ">
+                                <rect key="frame" x="310" y="98" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="0.93893429440290188" green="0.74187494277033961" blue="0.44756839200792264" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.44705882349999998" green="0.074509803920000006" blue="0.043137254899999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="swSiteProjChangedWithSender:" destination="Tk5-DR-xtG" eventType="touchUpInside" id="lcd-34-jFS"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1012,13 +1021,13 @@
                             <constraint firstItem="gS6-J1-xey" firstAttribute="top" secondItem="4d9-mD-Z5u" secondAttribute="bottom" constant="8" symbolic="YES" id="dJo-eT-G5W"/>
                             <constraint firstItem="xRj-aN-E0m" firstAttribute="bottom" secondItem="gS6-J1-xey" secondAttribute="bottom" constant="223" id="dk4-3R-Ecn"/>
                             <constraint firstItem="EK6-mr-Qg5" firstAttribute="baseline" secondItem="gS6-J1-xey" secondAttribute="baseline" id="eNo-6q-nHd"/>
-                            <constraint firstItem="bm7-7K-qFh" firstAttribute="top" secondItem="xRj-aN-E0m" secondAttribute="top" constant="30" id="fWk-dz-K2z"/>
+                            <constraint firstItem="bm7-7K-qFh" firstAttribute="top" secondItem="xRj-aN-E0m" secondAttribute="top" constant="27" id="fWk-dz-K2z"/>
                             <constraint firstItem="EK6-mr-Qg5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4d9-mD-Z5u" secondAttribute="trailing" constant="-143" id="iI1-SX-vV0"/>
-                            <constraint firstItem="bm7-7K-qFh" firstAttribute="trailing" secondItem="MGk-t2-Aem" secondAttribute="trailingMargin" id="orh-lQ-3vx"/>
+                            <constraint firstItem="bm7-7K-qFh" firstAttribute="trailing" secondItem="MGk-t2-Aem" secondAttribute="trailingMargin" constant="-92" id="orh-lQ-3vx"/>
                             <constraint firstItem="19H-2w-c2A" firstAttribute="leading" secondItem="xLR-8Z-FhK" secondAttribute="leading" id="qWP-EW-7Bz"/>
                             <constraint firstItem="xLR-8Z-FhK" firstAttribute="trailing" secondItem="4d9-mD-Z5u" secondAttribute="trailing" id="thq-Q6-c2o"/>
                             <constraint firstItem="qjf-Do-AfA" firstAttribute="top" secondItem="gS6-J1-xey" secondAttribute="bottom" constant="8" symbolic="YES" id="uZG-sh-kai"/>
-                            <constraint firstItem="bm7-7K-qFh" firstAttribute="trailing" secondItem="elq-1v-m0M" secondAttribute="trailing" id="xYn-Sq-HaK"/>
+                            <constraint firstItem="bm7-7K-qFh" firstAttribute="trailing" secondItem="elq-1v-m0M" secondAttribute="trailing" constant="-92" id="xYn-Sq-HaK"/>
                             <constraint firstItem="xLR-8Z-FhK" firstAttribute="leading" secondItem="4d9-mD-Z5u" secondAttribute="leading" id="xzF-5H-dbc"/>
                             <constraint firstItem="bm7-7K-qFh" firstAttribute="leading" secondItem="JOG-7m-eU5" secondAttribute="leading" id="za5-W4-2Up"/>
                             <constraint firstItem="xRj-aN-E0m" firstAttribute="trailing" secondItem="JOG-7m-eU5" secondAttribute="trailing" constant="16" id="ze3-51-57k"/>
@@ -1028,6 +1037,8 @@
                     <tabBarItem key="tabBarItem" title="Ad Hoc" id="EmR-ak-fWR"/>
                     <connections>
                         <outlet property="btnSave" destination="gS6-J1-xey" id="oC4-fc-8UW"/>
+                        <outlet property="lbSiteProj" destination="bm7-7K-qFh" id="aZj-Ab-vbp"/>
+                        <outlet property="swSiteProj" destination="AkP-pw-HzZ" id="hO4-RJ-3dU"/>
                         <outlet property="tableview" destination="qjf-Do-AfA" id="Po3-0o-jpt"/>
                         <outlet property="tvDescripton" destination="4d9-mD-Z5u" id="YCo-27-bvo"/>
                         <outlet property="txClient" destination="19H-2w-c2A" id="DUc-os-yLP"/>
@@ -1441,7 +1452,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oyn-eE-I3v"/>
-        <segue reference="ol5-iv-vIi"/>
+        <segue reference="hob-85-8jA"/>
         <segue reference="oce-yn-7rc"/>
         <segue reference="jfJ-Zy-waJ"/>
     </inferredMetricsTieBreakers>
