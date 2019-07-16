@@ -126,7 +126,8 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
     }
     
     func surveyIDReturnedWith(data: [String : String]) {
-        Session.surveyID = data["surveyID"]
+        print("&&Save:surveyID:" + data["surveyid"]!)
+        Session.surveyID = data["surveyid"]
         Session.surveyData!.nullifyAll()
     }
 
