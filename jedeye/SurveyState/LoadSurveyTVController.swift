@@ -14,12 +14,22 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
     var sectionedList : [String:[String]] = [:]
     var tableList : [String:[(site:String, contractor:String, wonum:String)]] = [:]
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.title = "Load"
         Session.delegate = self
         Session.getSurveyList(forUser: Session.usertkey!, filter: "o", history:"0", mindate:"2019-01-01 00:00:00")
-
+        //self.setEditing(true, animated: true)
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(!isEditing, animated: true)
     }
 
     // MARK: - Table view data source
@@ -243,7 +253,6 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
-    }
     */
 
     /*
