@@ -36,6 +36,8 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
     
     func surveyListReturnedWith(data: EntryType) {
         self.userSurveyList = data
+        self.sectionedList = [:]
+        self.tableList = [:]
         //sectionedList is to make the index elements easier
         for (k, a) in self.userSurveyList! {
             self.sectionedList[k] = ([
@@ -178,8 +180,11 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
         Session.surveyData?.surveySelections = data
         
         DispatchQueue.main.async {
+            /*
             let index = self.navigationController?.viewControllers[1] as! MainTVController
             self.navigationController?.popToViewController(index as UIViewController, animated: true)
+            */
+            self.tabBarController?.selectedIndex = 2 // View tab
         }
     }
     

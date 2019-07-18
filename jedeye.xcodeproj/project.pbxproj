@@ -30,6 +30,7 @@
 		1D73A28922DDF478008255D5 /* SurveyDetailTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73A28822DDF478008255D5 /* SurveyDetailTVController.swift */; };
 		1D73A28B22DDF611008255D5 /* SurveyAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73A28A22DDF611008255D5 /* SurveyAddressCell.swift */; };
 		1D73A28D22DDF754008255D5 /* SurveyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73A28C22DDF754008255D5 /* SurveyInfoCell.swift */; };
+		1D73A28F22DE2478008255D5 /* SurveyUserSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D73A28E22DE2478008255D5 /* SurveyUserSelectionCell.swift */; };
 		1D793B0D21FA07DE00E4C80C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D793B0C21FA07DE00E4C80C /* AppDelegate.swift */; };
 		1D793B0F21FA07DE00E4C80C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D793B0E21FA07DE00E4C80C /* ViewController.swift */; };
 		1D793B1221FA07DE00E4C80C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D793B1021FA07DE00E4C80C /* Main.storyboard */; };
@@ -96,6 +97,7 @@
 		1D73A28822DDF478008255D5 /* SurveyDetailTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailTVController.swift; sourceTree = "<group>"; };
 		1D73A28A22DDF611008255D5 /* SurveyAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyAddressCell.swift; sourceTree = "<group>"; };
 		1D73A28C22DDF754008255D5 /* SurveyInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyInfoCell.swift; sourceTree = "<group>"; };
+		1D73A28E22DE2478008255D5 /* SurveyUserSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyUserSelectionCell.swift; sourceTree = "<group>"; };
 		1D793B0921FA07DE00E4C80C /* jedeye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jedeye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D793B0C21FA07DE00E4C80C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D793B0E21FA07DE00E4C80C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				1D73A28422DCD779008255D5 /* LoadViewCell.swift */,
 				1D73A28C22DDF754008255D5 /* SurveyInfoCell.swift */,
 				1D73A28A22DDF611008255D5 /* SurveyAddressCell.swift */,
+				1D73A28E22DE2478008255D5 /* SurveyUserSelectionCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				1D5138952289A7D70010C7CD /* AsynchDataDelegate.swift in Sources */,
 				1D52F28C2292F6E800A43448 /* FiveHundredLbViewController.swift in Sources */,
 				1D52F28F22930A8500A43448 /* PowerViewController.swift in Sources */,
+				1D73A28F22DE2478008255D5 /* SurveyUserSelectionCell.swift in Sources */,
 				1D33453F22A01B57004DB221 /* SaveSurveyViewController.swift in Sources */,
 				1D793B0F21FA07DE00E4C80C /* ViewController.swift in Sources */,
 				1D33453D22A01B15004DB221 /* SurveyStateTBController.swift in Sources */,

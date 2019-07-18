@@ -84,7 +84,6 @@ class MainTVController: UITableViewController, AsynchDataDelegate {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         switch segue.identifier {
         case "NonTeleSegue" :
             let indexPath = self.tableView.indexPathForSelectedRow

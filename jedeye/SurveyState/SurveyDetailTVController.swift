@@ -12,7 +12,7 @@ class SurveyDetailTVController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,13 +23,12 @@ class SurveyDetailTVController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 1
+        
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -41,6 +40,8 @@ class SurveyDetailTVController: UITableViewController {
             retVal = "Site / Project Address"
         case 2:
             retVal = "Contractor Address"
+        case 3:
+            retVal = "User Selections"
         default:
             print("&&Unknown section")
             
@@ -77,6 +78,27 @@ class SurveyDetailTVController: UITableViewController {
             cell.lbPostalCode?.text = Session.surveyData?.c_postalcode
             cell.lbPhone?.text = Session.surveyData?.c_phone
             cell.lbPhone2?.text = Session.surveyData?.c_phone2
+            return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SurveyUserSelectionCell", for: indexPath) as! SurveyUserSelectionCell
+            
+            cell.lbEquipmentType?.text = Session.surveyData?.surveySelections["Type"] as? String
+            cell.lbEquipmentPowerType?.text = Session.surveyData?.surveySelections["Power"] as? String
+            cell.lbWallHeight?.text = Session.surveyData?.surveySelections["WallHeight"] as? String
+            cell.lbOpeningWidth?.text = Session.surveyData?.surveySelections["OpeningWidth"] as? String
+            cell.lbOpeningHeight?.text = Session.surveyData?.surveySelections["OpeningHeight"] as? String
+            cell.lbEquipmentWeight?.text = Session.surveyData?.surveySelections["TerWeight"] as? String
+            cell.lbLiftGreaterThan500?.text = Session.surveyData?.surveySelections["gt500"] as? String
+            cell.lbMeasuredDistance?.text = Session.surveyData?.surveySelections["MeasDistance"] as? String
+            cell.lbMeasuredAngle?.text = Session.surveyData?.surveySelections["MeasAngle"] as? String
+            cell.lbAccessoryAntiCrush?.text = Session.surveyData?.surveySelections["Anti-Crush Bar"] as? String
+            cell.lbAccessoryDripDiaper?.text = Session.surveyData?.surveySelections["Drip Diaper"] as? String
+            cell.lbAccessoryGlazingKit?.text = Session.surveyData?.surveySelections["Glazing Kit"] as? String
+            cell.lbAccessorySkyPower?.text = Session.surveyData?.surveySelections["Sky Power"] as? String
+            cell.lbAccessorySkyWelder?.text = Session.surveyData?.surveySelections["Sky Welder"] as? String
+            cell.lbAccessoryTireSocks?.text = Session.surveyData?.surveySelections["Tire Socks"] as? String
+            cell.lbAccessoryExtendedForks?.text = Session.surveyData?.surveySelections["Extended Forks"] as? String
+            
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "none", for: indexPath)

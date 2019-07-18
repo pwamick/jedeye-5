@@ -129,6 +129,7 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
         print("&&Save:surveyID:" + data["surveyid"]!)
         Session.surveyID = data["surveyid"]
         Session.surveyData!.nullifyAll()
+        Session.surveyData!.surveySelections = [:]
     }
 
     override func viewWillAppear(_ animated: Bool) {
