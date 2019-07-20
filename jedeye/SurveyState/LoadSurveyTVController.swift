@@ -17,7 +17,6 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,7 +24,15 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
         self.tabBarController?.title = "Load"
         Session.delegate = self
         Session.getSurveyList(forUser: Session.usertkey!, filter: "o", history:"0", mindate:"2019-01-01 00:00:00")
-        //self.setEditing(true, animated: true)
+        
+        let bbtnEdit = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editing(sender:)))
+        
+        self.tabBarController?.navigationItem.rightBarButtonItem = bbtnEdit
+        
+    }
+    
+    @objc func editing(sender: UIBarButtonItem) {
+        self.setEditing(true, animated: true)
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -36,6 +43,13 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
     
     func surveyListReturnedWith(data: EntryType) {
         self.userSurveyList = data
+        self.makeLists()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func makeLists() {
         self.sectionedList = [:]
         self.tableList = [:]
         //sectionedList is to make the index elements easier
@@ -44,10 +58,10 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
                 a["s_lname"],
                 a["c_lname"],
                 a["workorderno"]
-            ] as! [String])
+                ] as! [String])
         }
         //print(self.sectionedList)
-
+        
         //build the table view hierarchy:
         
         var bag: Set<String> = []
@@ -56,7 +70,7 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
             let firstcharofsite = String(sitename.dropLast(sitename.count - 1))
             bag.insert(firstcharofsite)
         }
-        print(bag)
+        //print(bag)
         for s in bag {
             for (_, v) in self.sectionedList {
                 //if s == the first letter of self.sectionedList[k][0]
@@ -65,7 +79,7 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
                 let wonum = v[2] //workorderno
                 let firstcharofsite = String(sitename.dropLast(sitename.count - 1))
                 if s == firstcharofsite {
-                    print("&&Match: \(s) == \(firstcharofsite)")
+                    //print("&&Match: \(s) == \(firstcharofsite)")
                     if self.tableList[s]?.isEmpty ?? true {
                         self.tableList[s] = [(site: sitename, contractor: conname, wonum:wonum)]
                     } else {
@@ -74,10 +88,7 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
                 }
             }
         }
-        print(self.tableList)
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        //print(self.tableList)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -249,17 +260,27 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! LoadViewCell
+        let surveyid = cell.workOrderNo!
+        print("&&Deleting: \(surveyid)")
         if editingStyle == .delete {
-            // Delete the row from the data source
+            self.userSurveyList?.removeValue(forKey: surveyid)
+            self.makeLists()
+            /***
+             Session.deleteSurvey(surveyid: surveyid, note: "User deletion", empid: Session.usertkey)
+             ***/
+            //remove the rows from the physical table view:
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
-    */
-
+    }
+    
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {

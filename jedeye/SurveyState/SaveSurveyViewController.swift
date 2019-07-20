@@ -134,6 +134,7 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.navigationItem.rightBarButtonItem = nil
         self.tabBarController?.title = "Save"
         self.btnSave?.setTitle("Save", for: UIControl.State.normal)
         self.tvDescripton?.layer.borderWidth = 0.5

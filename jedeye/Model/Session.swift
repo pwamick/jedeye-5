@@ -352,7 +352,7 @@ class Session : NSObject {
         let strURL = self.appSettings!["URL"]! + "fetchsurveys.php?emptkey=\(forUser)&status=\(filter)&" +
             "history=\(history)&mindate=\(mdate)"
         
-        print("&&Query:\(strURL)")
+        //print("&&Query:\(strURL)")
         
         let url = URL(string: strURL)!
         URLSession.shared.dataTask(with: url, completionHandler: { data, response, error -> Void in
@@ -375,6 +375,38 @@ class Session : NSObject {
                 }
                 //print(list)
                 self.delegate?.surveyListReturnedWith(data: list)
+            } catch {
+                print("&&JSON Serialization error")
+            }
+        }).resume()
+    }
+    
+    static func deleteSurvey(surveyid:String, note:String, empid:String) {
+        let strURL = self.appSettings!["URL"]! +
+            "deletesurvey.php?surveyid=" + surveyid +
+            "&reftype=workorderno" +
+            "&note=" + note +
+            "&empid=" + empid +
+            "&deviceid=" + self.deviceID!
+        
+        let url = URL(string: strURL)!
+        
+        URLSession.shared.dataTask(with: url, completionHandler: { data, response, error -> Void in
+            //print("&&Survey: in completion handler")
+            if error != nil {
+                print("&&No Connection:\(String(describing: error?.localizedDescription))")
+                return
+            }
+            do {
+                //print("&&Survey: in do in completion handler: \(data!)")
+                
+                let jsonDecoder = JSONDecoder()
+                //print("&&Survey: jsonDecoder assigned")
+                let resData = try jsonDecoder.decode([String:String].self, from: data!)
+                //print("&&Session list for \(forUser): \(list)")
+                
+                //print(list)
+                self.delegate?.surveyDeleted(data: resData)
             } catch {
                 print("&&JSON Serialization error")
             }

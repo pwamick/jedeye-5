@@ -16,12 +16,13 @@ class SurveyStateTBController: UITabBarController {
 
     override func viewWillAppear(_ animated:Bool) {
         super.viewWillAppear(animated)
-        
+        /* badge deemed unuseful 07/20/19
         if Session.numSurveysForUser! > 0 {
             let arrItems = self.tabBar.items as [UITabBarItem]?
             let loadItem = arrItems![C_LOAD]
             loadItem.badgeValue = String(Session.numSurveysForUser!)
         }
+        */
     }
     
 
