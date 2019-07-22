@@ -54,6 +54,7 @@ class AccessoriesTVController: UITableViewController {
         //loop through all the rows, looking for set switches
         for (c) in tableView.visibleCells {
             let accCell = c as? BooleanCell
+            Session.addToEquipmentSelectionDict(id: accCell!.accessory!.text!, value: (accCell!.isNeeded!.isOn ? "true" : "false"))
             selectedAccessories[accCell!.accessory!.text!] = (accCell!.isNeeded!.isOn ? "true" : "false")
         }
         Session.addToEquipmentSelectionDict(id: "Accessories", value: selectedAccessories)

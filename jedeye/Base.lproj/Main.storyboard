@@ -36,7 +36,7 @@
                                     <action selector="userTappedTextFieldWithSender:" destination="xxz-4m-cC8" eventType="touchDown" id="a42-4C-1ZD"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xOv-Nc-Ghp">
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xOv-Nc-Ghp">
                                 <rect key="frame" x="145.5" y="254" width="84" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Mjp-Gk-Noz"/>
