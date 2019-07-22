@@ -274,7 +274,8 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
              Session.deleteSurvey(surveyid: surveyid, note: "User deletion", empid: Session.usertkey)
              ***/
             
-            //remove the rows from the physical table view:
+            //remove the row from the physical table view. If we'd be removing
+            //the last row of a section, remove the section instead:
             let indexSet = IndexSet(integer: indexPath.section)
             if tableView.numberOfRows(inSection: indexPath.section) == 1 {
                 tableView.deleteSections(indexSet, with: .fade)
