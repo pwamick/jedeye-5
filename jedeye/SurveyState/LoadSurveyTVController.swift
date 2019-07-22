@@ -60,7 +60,7 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
                 a["workorderno"]
                 ] as! [String])
         }
-        //print(self.sectionedList)
+        //print("&&Sectioned List is: \(self.sectionedList)")
         
         //build the table view hierarchy:
         
@@ -70,7 +70,7 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
             let firstcharofsite = String(sitename.dropLast(sitename.count - 1))
             bag.insert(firstcharofsite)
         }
-        //print(bag)
+        //print("&&Bag contents: \(bag)")
         for s in bag {
             for (_, v) in self.sectionedList {
                 //if s == the first letter of self.sectionedList[k][0]
@@ -88,7 +88,7 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
                 }
             }
         }
-        //print(self.tableList)
+        //print("&&Table List count: \(self.tableList.count)")
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -187,7 +187,7 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
     }
     
     func kvpairsfetched(data: [String : String]) {
-        print("&&kvpair data: \(data)")
+        //print("&&kvpair data: \(data)")
         Session.surveyData?.surveySelections = data
         
         DispatchQueue.main.async {
@@ -273,8 +273,15 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
             /***
              Session.deleteSurvey(surveyid: surveyid, note: "User deletion", empid: Session.usertkey)
              ***/
+            
             //remove the rows from the physical table view:
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let indexSet = IndexSet(integer: indexPath.section)
+            if tableView.numberOfRows(inSection: indexPath.section) == 1 {
+                tableView.deleteSections(indexSet, with: .fade)
+            } else {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
