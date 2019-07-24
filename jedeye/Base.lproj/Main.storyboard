@@ -1373,7 +1373,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Tk5-DR-xtG" kind="relationship" relationship="viewControllers" id="inz-XZ-hJ3"/>
                         <segue destination="9eb-gL-e8a" kind="relationship" relationship="viewControllers" id="QhV-rJ-210"/>
                         <segue destination="cgo-f0-iLy" kind="relationship" relationship="viewControllers" id="sZk-31-vm9"/>
                     </connections>
@@ -1435,6 +1434,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Load" id="SbZ-9M-nYc"/>
+                    <connections>
+                        <segue destination="Tk5-DR-xtG" kind="show" identifier="LoadToSaveSegue" id="nuU-zL-TUo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNg-VJ-CT5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1490,13 +1492,13 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4d9-mD-Z5u">
-                                <rect key="frame" x="16" y="277" width="343" height="80"/>
+                                <rect key="frame" x="16" y="277" width="343" height="85"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gS6-J1-xey">
-                                <rect key="frame" x="16" y="365" width="128" height="30"/>
+                                <rect key="frame" x="16" y="370" width="128" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButtonClickedWithSender:" destination="Tk5-DR-xtG" eventType="touchUpInside" id="mag-Xq-BrC"/>
@@ -1538,7 +1540,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EK6-mr-Qg5">
-                                <rect key="frame" x="159" y="365" width="57" height="30"/>
+                                <rect key="frame" x="159" y="370" width="57" height="30"/>
                                 <state key="normal" title="Address"/>
                                 <connections>
                                     <segue destination="8YX-jP-Ahv" kind="show" identifier="SaveToAddressSegue" id="Lpt-80-kGJ"/>
@@ -1565,7 +1567,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oT-yU-Ndr">
-                                <rect key="frame" x="277" y="365" width="82" height="30"/>
+                                <rect key="frame" x="277" y="370" width="82" height="30"/>
                                 <state key="normal" title="New Survey"/>
                                 <connections>
                                     <action selector="btnNewSurveyClickedWithSender:" destination="Tk5-DR-xtG" eventType="touchUpInside" id="bGd-Ze-Cm3"/>
@@ -1804,7 +1806,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="147" id="cod-hC-kjn" customClass="EquipmentCell" customModule="jedeye" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="equipmentCell" rowHeight="147" id="cod-hC-kjn" customClass="EquipmentCell" customModule="jedeye" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="147"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cod-hC-kjn" id="AuW-RE-1vP">

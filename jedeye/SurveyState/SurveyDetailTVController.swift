@@ -22,7 +22,7 @@ class SurveyDetailTVController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.navigationItem.rightBarButtonItem = nil
+        self.tabBarController?.navigationItem.rightBarButtonItems = []
         self.tabBarController?.title = "View"
         
     }

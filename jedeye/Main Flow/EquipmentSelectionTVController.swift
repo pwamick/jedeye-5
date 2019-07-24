@@ -16,7 +16,8 @@ class EquipmentSelectionTVController: UITableViewController {
         super.viewDidLoad()
 
         self.title = "Equipment"
-       
+        
+        equipment["FL-183"] = "Example Boom Lift"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,18 +33,23 @@ class EquipmentSelectionTVController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.equipment.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "equipmentCell", for: indexPath) as! EquipmentCell
 
         // Configure the cell...
-
+        let equipmentKeys = Array(self.equipment.keys).sorted()
+        let thisKey = equipmentKeys[indexPath.row]
+        
+        cell.lbManufacturer?.text = equipment[thisKey]
+        cell.lbModel?.text = thisKey
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -134,9 +134,10 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.navigationItem.rightBarButtonItem = nil
-        self.tabBarController?.title = "Save"
-        self.btnSave?.setTitle("Save", for: UIControl.State.normal)
+        self.tabBarController?.navigationItem.rightBarButtonItems = []
+        
+        self.title = "Add Survey"
+        self.btnSave?.setTitle("Add", for: UIControl.State.normal)
         self.tvDescripton?.layer.borderWidth = 0.5
         self.tvDescripton?.layer.borderColor = UIColor.darkGray.cgColor
         Session.delegate = self
@@ -207,8 +208,7 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
         print("&&Survey Saved, return code = " + data["returncode"]!)
         
         DispatchQueue.main.async {
-            let index = self.navigationController?.viewControllers[1] as! MainTVController
-            self.navigationController?.popToViewController(index as UIViewController, animated: true)
+            self.navigationController?.popViewController(animated: true)
         }
     }
 

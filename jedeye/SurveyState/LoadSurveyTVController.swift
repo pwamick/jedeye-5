@@ -21,18 +21,23 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.title = "Load"
+        self.tabBarController?.title = "Surveys"
         Session.delegate = self
         Session.getSurveyList(forUser: Session.usertkey!, filter: "o", history:"0", mindate:"2019-01-01 00:00:00")
         
         let bbtnEdit = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editing(sender:)))
+        let bbtnAdd = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addSurvey(sender:)))
         
-        self.tabBarController?.navigationItem.rightBarButtonItem = bbtnEdit
+        self.tabBarController?.navigationItem.rightBarButtonItems = [bbtnAdd, bbtnEdit]
         
     }
     
     @objc func editing(sender: UIBarButtonItem) {
         self.setEditing(true, animated: true)
+    }
+    
+    @objc func addSurvey(sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "LoadToSaveSegue", sender: sender)
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -53,6 +58,7 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
         self.sectionedList = [:]
         self.tableList = [:]
         //sectionedList is to make the index elements easier
+        print(self.userSurveyList!)
         for (k, a) in self.userSurveyList! {
             self.sectionedList[k] = ([
                 a["s_lname"],
@@ -65,6 +71,7 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
         //build the table view hierarchy:
         
         var bag: Set<String> = []
+        
         for (k, _) in self.sectionedList {
             let sitename = self.sectionedList[k]![0] //s_lname
             let firstcharofsite = String(sitename.dropLast(sitename.count - 1))
@@ -163,23 +170,16 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
         let siteName = selectedCell.lbSiteName?.text
         
         //give the user the opportunity to save the current session:
-        let alertController = UIAlertController(title: "Save Session?", message: "Would you like to save the current session before loading \"\(siteName!)?\"", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Load Survey?", message: "Are you sure you want to load Survey Number \(currentKey!): \"\(siteName!)?\"", preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
-            Session.saveSurvey(surveyType: "NULL")
             self.copySurveyData(currentKey:currentKey!)
             //this will fire the kvpairsfetched delegate method of Session:
             Session.fetchKVPairs()
         }))
         
-        alertController.addAction(UIAlertAction(title: "No", style: .default, handler: { (action: UIAlertAction) in
-            self.copySurveyData(currentKey: currentKey!)
-            //this will fire the kvpairsfetched delegate method of Session:
-            Session.fetchKVPairs()
-        }))
-        
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action: UIAlertAction) in
-            //do nothing
+        alertController.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action: UIAlertAction) in
+            //nothing done here
         }))
         
         present(alertController, animated: true, completion: nil)
@@ -195,7 +195,7 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
             let index = self.navigationController?.viewControllers[1] as! MainTVController
             self.navigationController?.popToViewController(index as UIViewController, animated: true)
             */
-            self.tabBarController?.selectedIndex = 2 // View tab
+            self.tabBarController?.selectedIndex = 1 // View tab
         }
     }
     
@@ -304,14 +304,21 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        switch segue.identifier {
+        case "LoadToSaveSegue":
+            let destVC = segue.destination as! SaveSurveyViewController
+            
+        default:
+            print("&&Non Existant Segue in Load VC")
+        }
     }
-    */
+    
 
 }
