@@ -121,7 +121,7 @@ class LoginViewController: UIViewController, AsynchDataDelegate {
     func loginSuccessful(uid:String, pwd:String) -> Bool {
         var retVal = false
         //validate both fields contain text:
-        if (notEmpty(self.txUserID!) && notEmpty(self.txPWD!)) {
+        if (notEmpty(self.txUserID!) /*&& notEmpty(self.txPWD!)*/) {
             retVal = true
         }
         
