@@ -22,7 +22,6 @@
 		1D52F28F22930A8500A43448 /* PowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52F28E22930A8500A43448 /* PowerViewController.swift */; };
 		1D52F29122930AC300A43448 /* MeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52F29022930AC300A43448 /* MeasurementViewController.swift */; };
 		1D52F293229326DE00A43448 /* AccessoriesTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52F292229326DE00A43448 /* AccessoriesTVController.swift */; };
-		1D52F298229430C700A43448 /* EquipmentSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52F297229430C700A43448 /* EquipmentSelectionViewController.swift */; };
 		1D52F29E2295BF1900A43448 /* ArticulatingWallHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52F29D2295BF1900A43448 /* ArticulatingWallHeightViewController.swift */; };
 		1D6D4DF422C50A5200D065EF /* fetchsurveys.php in Resources */ = {isa = PBXBuildFile; fileRef = 1D6D4DF322C50A5200D065EF /* fetchsurveys.php */; };
 		1D6D4DF622C53E2000D065EF /* fetchkvpairs.php in Resources */ = {isa = PBXBuildFile; fileRef = 1D6D4DF522C53E2000D065EF /* fetchkvpairs.php */; };
@@ -49,6 +48,8 @@
 		1D943DCB2296FB140021B163 /* templogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D943DCA2296FB140021B163 /* templogo.png */; };
 		1D943DCD2296FD630021B163 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D943DCC2296FD630021B163 /* Session.swift */; };
 		1D95623A222704F8002AC2D4 /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D956239222704F8002AC2D4 /* NavController.swift */; };
+		1D95F48022E89ACA00AF0BBC /* EquipmentSelectionTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D95F47F22E89ACA00AF0BBC /* EquipmentSelectionTVController.swift */; };
+		1D95F48222E89C5100AF0BBC /* EquipmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D95F48122E89C5100AF0BBC /* EquipmentCell.swift */; };
 		1D98E4D522887D5700E3C28D /* SubtypeTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98E4D422887D5700E3C28D /* SubtypeTVController.swift */; };
 		1DCC96E322A821990053A3CE /* File in Resources */ = {isa = PBXBuildFile; fileRef = 1DCC96E222A821990053A3CE /* File */; };
 		1DE4967E22905765006BEBD5 /* MeasureOpeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE4967D22905765006BEBD5 /* MeasureOpeningViewController.swift */; };
@@ -89,7 +90,6 @@
 		1D52F28E22930A8500A43448 /* PowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerViewController.swift; sourceTree = "<group>"; };
 		1D52F29022930AC300A43448 /* MeasurementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementViewController.swift; sourceTree = "<group>"; };
 		1D52F292229326DE00A43448 /* AccessoriesTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoriesTVController.swift; sourceTree = "<group>"; };
-		1D52F297229430C700A43448 /* EquipmentSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentSelectionViewController.swift; sourceTree = "<group>"; };
 		1D52F29D2295BF1900A43448 /* ArticulatingWallHeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticulatingWallHeightViewController.swift; sourceTree = "<group>"; };
 		1D6D4DF322C50A5200D065EF /* fetchsurveys.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = fetchsurveys.php; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.php; };
 		1D6D4DF522C53E2000D065EF /* fetchkvpairs.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = fetchkvpairs.php; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.php; };
@@ -122,6 +122,8 @@
 		1D943DCA2296FB140021B163 /* templogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = templogo.png; sourceTree = "<group>"; };
 		1D943DCC2296FD630021B163 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		1D956239222704F8002AC2D4 /* NavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
+		1D95F47F22E89ACA00AF0BBC /* EquipmentSelectionTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentSelectionTVController.swift; sourceTree = "<group>"; };
+		1D95F48122E89C5100AF0BBC /* EquipmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentCell.swift; sourceTree = "<group>"; };
 		1D98E4D422887D5700E3C28D /* SubtypeTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtypeTVController.swift; sourceTree = "<group>"; };
 		1DCC96E222A821990053A3CE /* File */ = {isa = PBXFileReference; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		1DE4967D22905765006BEBD5 /* MeasureOpeningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureOpeningViewController.swift; sourceTree = "<group>"; };
@@ -181,7 +183,7 @@
 				1D8C114322CF9AAD00F38275 /* LiftWeightViewController.swift */,
 				1D52F29022930AC300A43448 /* MeasurementViewController.swift */,
 				1D52F292229326DE00A43448 /* AccessoriesTVController.swift */,
-				1D52F297229430C700A43448 /* EquipmentSelectionViewController.swift */,
+				1D95F47F22E89ACA00AF0BBC /* EquipmentSelectionTVController.swift */,
 				1D8C114522D5111800F38275 /* CarpenterMeasureViewController.swift */,
 				1D793B1521FA07DF00E4C80C /* LaunchScreen.storyboard */,
 			);
@@ -277,6 +279,7 @@
 				1D73A28C22DDF754008255D5 /* SurveyInfoCell.swift */,
 				1D73A28A22DDF611008255D5 /* SurveyAddressCell.swift */,
 				1D73A28E22DE2478008255D5 /* SurveyUserSelectionCell.swift */,
+				1D95F48122E89C5100AF0BBC /* EquipmentCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				1D73A28D22DDF754008255D5 /* SurveyInfoCell.swift in Sources */,
 				1D8C114222CBA5A300F38275 /* DropDownCell.swift in Sources */,
 				1D73A28522DCD779008255D5 /* LoadViewCell.swift in Sources */,
+				1D95F48022E89ACA00AF0BBC /* EquipmentSelectionTVController.swift in Sources */,
 				1D8C114622D5111800F38275 /* CarpenterMeasureViewController.swift in Sources */,
 				1D8C113922C6862600F38275 /* AddressViewController.swift in Sources */,
 				1DE4967E22905765006BEBD5 /* MeasureOpeningViewController.swift in Sources */,
@@ -461,12 +465,12 @@
 				1D52F29E2295BF1900A43448 /* ArticulatingWallHeightViewController.swift in Sources */,
 				1D5138952289A7D70010C7CD /* AsynchDataDelegate.swift in Sources */,
 				1D52F28C2292F6E800A43448 /* FiveHundredLbViewController.swift in Sources */,
+				1D95F48222E89C5100AF0BBC /* EquipmentCell.swift in Sources */,
 				1D52F28F22930A8500A43448 /* PowerViewController.swift in Sources */,
 				1D73A28F22DE2478008255D5 /* SurveyUserSelectionCell.swift in Sources */,
 				1D33453F22A01B57004DB221 /* SaveSurveyViewController.swift in Sources */,
 				1D793B0F21FA07DE00E4C80C /* ViewController.swift in Sources */,
 				1D33453D22A01B15004DB221 /* SurveyStateTBController.swift in Sources */,
-				1D52F298229430C700A43448 /* EquipmentSelectionViewController.swift in Sources */,
 				1D73A28922DDF478008255D5 /* SurveyDetailTVController.swift in Sources */,
 				1D793B0D21FA07DE00E4C80C /* AppDelegate.swift in Sources */,
 			);

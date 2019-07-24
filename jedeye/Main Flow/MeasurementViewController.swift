@@ -44,6 +44,14 @@ class MeasurementViewController: UIViewController, CarpenterDelegate {
         case "AccessSegue":
             if self.txDistance!.text != "" && self.txAngle!.text != "" {
                 retVal = true
+            } else {
+                let alertController = UIAlertController(title: "Required Fields", message:"You must enter both the distance and angle to the target", preferredStyle: .alert)
+                
+                alertController.addAction(UIAlertAction(title: "Okee Dokee", style: .default, handler: { (action: UIAlertAction) in
+                    // nothing to see here.
+                }))
+                
+                present(alertController, animated: true, completion: nil)
             }
         case "MeasurementToCarpSegue":
             retVal = true
