@@ -191,11 +191,11 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
         Session.surveyData?.surveySelections = data
         
         DispatchQueue.main.async {
-            /*
+            
             let index = self.navigationController?.viewControllers[1] as! MainTVController
             self.navigationController?.popToViewController(index as UIViewController, animated: true)
-            */
-            self.tabBarController?.selectedIndex = 1 // View tab
+            
+            
         }
     }
     
