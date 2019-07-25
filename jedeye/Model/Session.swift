@@ -240,7 +240,7 @@ class Session : NSObject {
                 let jsonDecoder = JSONDecoder()
                 //print("&&Survey: jsonDecoder assigned")
                 let surveyIDDict = try jsonDecoder.decode([String:String].self, from: data!)
-                self.surveyData?.surveyid = surveyIDDict["surveyid"]!
+                self.surveyID = surveyIDDict["surveyid"]!
                 //print("&&SurveyID:\(self.surveyData!.surveyid)")
                 self.delegate?.surveyIDReturnedWith(data: surveyIDDict)
                 
@@ -322,7 +322,7 @@ class Session : NSObject {
     }
     
     static func fetchKVPairs() {
-        let surveyid = self.surveyData?.surveyid
+        let surveyid = self.surveyID
         let strURL = self.appSettings!["URL"]! + "fetchkvpairs.php?surveyid=\(surveyid!)"
         print("&&kvpair url: \(strURL)")
         let url = URL(string: strURL)!

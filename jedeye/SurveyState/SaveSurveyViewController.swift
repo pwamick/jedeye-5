@@ -92,7 +92,7 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
                 self.customerID = "NULL"
             }
             Session.surveyData!.contractorid = self.customerID!
-        
+            print(Session.surveyID!)
             Session.saveSurvey(surveyType:"adhoc") //not yet
             
         } else {
@@ -107,7 +107,7 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
             present(alertController, animated: true, completion: nil)
         }
     }
-    
+    /*
     @IBAction func btnNewSurveyClicked(sender:UIButton) {
         let alertController = UIAlertController(title: "Start New Survey", message: "You are about to create a new (empty) survey. Are You Sure?", preferredStyle: .alert)
         
@@ -124,6 +124,7 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
         
         present(alertController, animated: true, completion: nil)
     }
+
     
     func surveyIDReturnedWith(data: [String : String]) {
         print("&&Save:surveyID:" + data["surveyid"]!)
@@ -131,7 +132,7 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
         Session.surveyData!.nullifyAll()
         Session.surveyData!.surveySelections = [:]
     }
-
+ */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.navigationItem.rightBarButtonItems = []
@@ -208,12 +209,12 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
         print("&&Survey Saved, return code = " + data["returncode"]!)
         
         DispatchQueue.main.async {
-            if self.btnSaveText == "Save"{
+            //if self.btnSaveText == "Save"{
                 self.navigationController?.popViewController(animated: true)
-            } else {
+            /*} else {
                 let index = self.navigationController?.viewControllers[1] as! MainTVController
                 self.navigationController?.popToViewController(index as UIViewController, animated: true)
-            }
+            }*/
         }
     }
 
@@ -221,6 +222,12 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
         switch segue.identifier {
         case "SaveToAddressSegue":
             let destVC = segue.destination as! AddressViewController
+            
+            //lose focus on all texts, so they aren't cleared on return:
+            self.txName?.resignFirstResponder()
+            self.txClient?.resignFirstResponder()
+            self.tvDescripton?.resignFirstResponder()
+            
             destVC.delegate = self
             destVC.backData.site = self.txName!.text!
             destVC.backData.contractor = self.txClient!.text!

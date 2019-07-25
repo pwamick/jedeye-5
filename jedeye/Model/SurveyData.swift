@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 class SurveyData : NSObject, CLLocationManagerDelegate{
-    var surveyid : String = ""
+    //var surveyid : String = ""
     var entereddatetime : String = ""
     var startdatetime : String = ""
     var enddatetime : String = ""
@@ -64,7 +64,7 @@ class SurveyData : NSObject, CLLocationManagerDelegate{
         formatter.dateFormat = "yyyy-MM-dd+HH:mm:ss"
         self.entereddatetime = formatter.string(from: Date())
         
-        var retVal = "surveyid=\(self.surveyid)&entereddatetime=\(self.entereddatetime)&"
+        var retVal = "surveyid=\(Session.surveyID!)&entereddatetime=\(self.entereddatetime)&"
         retVal += "startdatetime=\(self.startdatetime)&enddatetime=\(self.enddatetime)&"
         retVal += "status=\(self.status)&description=\(self.desc)&type=\(self.surveytype)&"
         retVal += "enditem=\(self.enditem)&enditemqty=\(self.enditemqty)&note=\(self.note)&"
@@ -84,7 +84,7 @@ class SurveyData : NSObject, CLLocationManagerDelegate{
         
         retVal = retVal.replacingOccurrences(of: " ", with: "+")
         
-        //print(retVal)
+        //print("&&QueryString:\(retVal)")
         
         return retVal
     }
@@ -94,7 +94,7 @@ class SurveyData : NSObject, CLLocationManagerDelegate{
         // "" input means "enter the blank string." Use this method to
         // set all values to NULL before setting individual value to
         // ensure overwriting doesn't happen.
-        self.surveyid = "NULL"
+        //self.surveyid = "NULL"
         self.entereddatetime = "NULL"
         self.startdatetime = "NULL"
         self.enddatetime = "NULL"

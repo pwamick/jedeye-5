@@ -21,6 +21,9 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        //print("&&&User Surveys: \(self.userSurveyList?.count)")
+        
         self.tabBarController?.title = "Surveys"
         Session.delegate = self
         Session.getSurveyList(forUser: Session.usertkey!, filter: "o", history:"0", mindate:"2019-01-01 00:00:00")
@@ -37,7 +40,8 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
     }
     
     @objc func addSurvey(sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "LoadToSaveSegue", sender: sender)
+        print("&&Add pressed")
+        Session.obtainSurveyID()
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -153,6 +157,7 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
         */
         cell.lbSiteName!.text = sitetext
         cell.lbContractor!.text = contractortext
+        cell.lbWONum!.text = workordernumber
         cell.workOrderNo = workordernumber
 
         return cell
@@ -205,7 +210,7 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
         Session.surveyData?.nullifyAll()
         //copy values into surveyData
         //print(self.userSurveyList!)
-        Session.surveyData!.surveyid = self.userSurveyList![currentKey]!["workorderno"]!
+        Session.surveyID = self.userSurveyList![currentKey]!["workorderno"]!
         Session.surveyData!.entereddatetime = "NULL"
         Session.surveyData!.startdatetime = self.userSurveyList![currentKey]!["startdate"]!
         Session.surveyData!.enddatetime = self.userSurveyList![currentKey]!["enddate"]!
@@ -313,12 +318,22 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
         // Pass the selected object to the new view controller.
         switch segue.identifier {
         case "LoadToSaveSegue":
+            /**/
             let destVC = segue.destination as! SaveSurveyViewController
-            
+            destVC.btnSaveText = "Add"
         default:
             print("&&Non Existant Segue in Load VC")
         }
     }
     
+    func surveyIDReturnedWith(data: [String : String]) {
+        print("&&SurveyID: \(data["surveyid"]!)")
+        Session.surveyID = data["surveyid"]
+        Session.surveyData?.nullifyAll()
+        Session.surveyData?.surveySelections = [:]
+        DispatchQueue.main.async{
+            self.performSegue(withIdentifier: "LoadToSaveSegue", sender: self)
+        }
+    }
 
 }

@@ -18,6 +18,8 @@ class EquipmentSelectionTVController: UITableViewController {
         self.title = "Equipment"
         
         equipment["FL-183"] = "Example Boom Lift"
+        
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Survey", style: .plain, target: self, action: #selector())
     }
     
     override func viewWillAppear(_ animated: Bool) {
