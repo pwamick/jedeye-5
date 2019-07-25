@@ -10,7 +10,7 @@ import UIKit
 
 class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, AddressDelegate {
     
-    
+    var btnSaveText = "Add"
     
     let PROJECT     = 1
     let CONTRACTOR  = 2
@@ -137,7 +137,7 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
         self.tabBarController?.navigationItem.rightBarButtonItems = []
         
         self.title = "Add Survey"
-        self.btnSave?.setTitle("Add", for: UIControl.State.normal)
+        self.btnSave?.setTitle(btnSaveText, for: UIControl.State.normal)
         self.tvDescripton?.layer.borderWidth = 0.5
         self.tvDescripton?.layer.borderColor = UIColor.darkGray.cgColor
         Session.delegate = self
@@ -208,7 +208,12 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
         print("&&Survey Saved, return code = " + data["returncode"]!)
         
         DispatchQueue.main.async {
-            self.navigationController?.popViewController(animated: true)
+            if self.btnSaveText == "Save"{
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                let index = self.navigationController?.viewControllers[1] as! MainTVController
+                self.navigationController?.popToViewController(index as UIViewController, animated: true)
+            }
         }
     }
 

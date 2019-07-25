@@ -1,3 +1,6 @@
-ToDo File -- JED-Eye 20190721
+ToDo File -- JED-Eye 20190725
 
-Deleting all rows in section in load controller crashes app.
+1. add new survey (+ on Surveys screen) Now goes back to start of survey
+2. Fixed - couldn't enter address / modify the new survey once it's added.
+    Tapping anywhere on the "View" Screen listing brings up the save screen,
+    where the user can modify the current survey. 

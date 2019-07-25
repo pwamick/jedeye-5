@@ -1357,6 +1357,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="View" id="RsR-wd-bil"/>
+                    <connections>
+                        <segue destination="Tk5-DR-xtG" kind="show" identifier="ViewToSaveSegue" id="EGc-hR-6Jr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6eZ-Rh-fiy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2123,6 +2126,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="blo-UU-ZpG"/>
+        <segue reference="EGc-hR-6Jr"/>
         <segue reference="ol5-iv-vIi"/>
         <segue reference="oce-yn-7rc"/>
         <segue reference="jfJ-Zy-waJ"/>
