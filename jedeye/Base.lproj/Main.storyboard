@@ -343,7 +343,7 @@
                     <navigationItem key="navigationItem" title="JED-Eye" id="soz-O0-1IK">
                         <barButtonItem key="rightBarButtonItem" title="Survey..." id="Kr7-gc-eSG">
                             <connections>
-                                <segue destination="EAb-20-1qi" kind="show" id="bgg-v1-LWR"/>
+                                <segue destination="EAb-20-1qi" kind="show" identifier="MainToSurveySegue" id="bgg-v1-LWR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2128,7 +2128,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="blo-UU-ZpG"/>
         <segue reference="nuU-zL-TUo"/>
-        <segue reference="UNS-5y-fi9"/>
+        <segue reference="bgg-v1-LWR"/>
         <segue reference="oce-yn-7rc"/>
         <segue reference="jfJ-Zy-waJ"/>
     </inferredMetricsTieBreakers>

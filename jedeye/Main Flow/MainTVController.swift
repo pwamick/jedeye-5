@@ -15,6 +15,7 @@ class MainTVController: UITableViewController, AsynchDataDelegate {
     var subtypes : [String:[String:String]] = [:]
     var dataFlag = false
     var headerText : String = ""
+    var loginFlag = true
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,6 +33,10 @@ class MainTVController: UITableViewController, AsynchDataDelegate {
         //print("&&\(self.questions)")
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            if self.loginFlag {
+                self.loginFlag = false
+                self.performSegue(withIdentifier: "MainToSurveySegue", sender: self)
+            }
         }
     }
     

@@ -14,6 +14,10 @@ class LoginViewController: UIViewController, AsynchDataDelegate {
     
     var validationSuccessful : Bool = false
     
+    //change this to false to go to first screen of
+    //survey after login successful:
+    var shouldPresentSurveyScreenAfterLogin = true
+    
     @IBOutlet weak var lbCaption : UILabel?
     @IBOutlet weak var lbPrompt : UILabel?
     @IBOutlet weak var txUserID : UITextField?
@@ -115,7 +119,13 @@ class LoginViewController: UIViewController, AsynchDataDelegate {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        switch segue.identifier {
+        case "LoginAttemptSegue":
+            let destVC = segue.destination as! MainTVController
+            destVC.loginFlag = shouldPresentSurveyScreenAfterLogin
+        default:
+            print("&&Unknown Segue ID in Main TVC")
+        }
     }
     
     func loginSuccessful(uid:String, pwd:String) -> Bool {

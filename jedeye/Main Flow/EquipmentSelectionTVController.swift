@@ -19,11 +19,15 @@ class EquipmentSelectionTVController: UITableViewController {
         
         equipment["FL-183"] = "Example Boom Lift"
         
-        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Survey", style: .plain, target: self, action: #selector())
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Survey", style: .plain, target: self, action: #selector(goSurvey(sender:)))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    @objc func goSurvey(sender:UIBarButtonItem) {
+        performSegue(withIdentifier: "EquipmentToSurveySegue", sender: sender)
     }
 
     // MARK: - Table view data source

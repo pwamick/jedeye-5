@@ -28,7 +28,7 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
         Session.delegate = self
         Session.getSurveyList(forUser: Session.usertkey!, filter: "o", history:"0", mindate:"2019-01-01 00:00:00")
         
-        let bbtnEdit = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editing(sender:)))
+        let bbtnEdit = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(editing(sender:)))
         let bbtnAdd = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addSurvey(sender:)))
         
         self.tabBarController?.navigationItem.rightBarButtonItems = [bbtnAdd, bbtnEdit]
@@ -36,6 +36,14 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
     }
     
     @objc func editing(sender: UIBarButtonItem) {
+        let bbi = self.tabBarController?.navigationItem.rightBarButtonItems![1]
+        
+        if bbi?.title == "Delete" {
+            bbi?.title = "Done"
+        } else {
+            bbi?.title = "Delete"
+        }
+        
         self.setEditing(true, animated: true)
     }
     
