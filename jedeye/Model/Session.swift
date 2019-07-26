@@ -388,7 +388,7 @@ class Session : NSObject {
             "&note=" + note +
             "&empid=" + empid +
             "&deviceid=" + self.deviceID!
-        
+        print(strURL)
         let url = URL(string: strURL)!
         
         URLSession.shared.dataTask(with: url, completionHandler: { data, response, error -> Void in

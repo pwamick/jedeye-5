@@ -283,9 +283,9 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
         if editingStyle == .delete {
             self.userSurveyList?.removeValue(forKey: surveyid)
             self.makeLists()
-            /***
-             Session.deleteSurvey(surveyid: surveyid, note: "User deletion", empid: Session.usertkey)
-             ***/
+            
+            Session.deleteSurvey(surveyid: surveyid, note: "User+deletion", empid: Session.usertkey!)
+            
             
             //remove the row from the physical table view. If we'd be removing
             //the last row of a section, remove the section instead:
@@ -299,6 +299,10 @@ class LoadSurveyTVController: UITableViewController, AsynchDataDelegate {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+    
+    func surveyDeleted(data: [String : String]) {
+        print(data)
     }
     
     

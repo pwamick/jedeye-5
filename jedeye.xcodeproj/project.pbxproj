@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D0089B92222DFA50057517D /* MainTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0089B82222DFA50057517D /* MainTVController.swift */; };
+		1D3131E822EB430400A73219 /* deletesurvey.php in Resources */ = {isa = PBXBuildFile; fileRef = 1D3131E722EB430400A73219 /* deletesurvey.php */; };
 		1D33453D22A01B15004DB221 /* SurveyStateTBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33453C22A01B15004DB221 /* SurveyStateTBController.swift */; };
 		1D33453F22A01B57004DB221 /* SaveSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33453E22A01B57004DB221 /* SaveSurveyViewController.swift */; };
 		1D33454122A01B84004DB221 /* LoadSurveyTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33454022A01B84004DB221 /* LoadSurveyTVController.swift */; };
@@ -76,6 +77,7 @@
 
 /* Begin PBXFileReference section */
 		1D0089B82222DFA50057517D /* MainTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTVController.swift; sourceTree = "<group>"; };
+		1D3131E722EB430400A73219 /* deletesurvey.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = deletesurvey.php; sourceTree = "<group>"; };
 		1D33453C22A01B15004DB221 /* SurveyStateTBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyStateTBController.swift; sourceTree = "<group>"; };
 		1D33453E22A01B57004DB221 /* SaveSurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSurveyViewController.swift; sourceTree = "<group>"; };
 		1D33454022A01B84004DB221 /* LoadSurveyTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadSurveyTVController.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				1D6D4DF322C50A5200D065EF /* fetchsurveys.php */,
 				1D6D4DF522C53E2000D065EF /* fetchkvpairs.php */,
 				1D8C113A22C68E9500F38275 /* savesurvey.php */,
+				1D3131E722EB430400A73219 /* deletesurvey.php */,
 			);
 			path = phpedit;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				1D943DCB2296FB140021B163 /* templogo.png in Resources */,
 				1D33454722A05F72004DB221 /* Jedeye logo 120x120.png in Resources */,
 				1D8C113B22C68E9500F38275 /* savesurvey.php in Resources */,
+				1D3131E822EB430400A73219 /* deletesurvey.php in Resources */,
 				1D6D4DF422C50A5200D065EF /* fetchsurveys.php in Resources */,
 				1D6D4DF622C53E2000D065EF /* fetchkvpairs.php in Resources */,
 				1D793B1221FA07DE00E4C80C /* Main.storyboard in Resources */,

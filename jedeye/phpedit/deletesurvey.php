@@ -1,0 +1,44 @@
+<?php
+    //deletesurvey.php
+    
+    $referenceid = $_GET['surveyid'];
+    $referencetype = $_GET['reftype'];
+    $empkey = $_GET['note'];
+    $deviceid = $_GET['empid'];
+    
+    $host = "localhost";
+    $dbname = "ibeammac_iScan";
+    $charset = "utf8mb4";
+    
+    $options = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+    PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => true
+    ];
+    
+    
+    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+    
+    try {
+        $dsc = new PDO($dsn, "ibeammac_webuser", "ShinerBock4me2", $options);
+        
+        $callSql = "CALL ibeammac_iScan.spt_survery_delete($referenceid, $referencetype, $empkey, $deviceid, @returncode, @returnmessage)";
+        $pCallSql = $dsc->prepare($callSql);
+        
+        $pCallSql->execute()
+        
+        $sql = "SELECT @returncode AS retcode, @returnmessage AS retmsg"'
+        $pSql = $dsc->prepare($sql);
+        
+        while ($rset = $pSql -> fetch(PDO::FETCH_ASSOC)) {
+            print("{\"retcode\":\"" . $rset['retcode'] . "\", ");
+            print("\"retmsg\":\"" . $rset['retmsg'] . "\"}");
+        }
+        
+        $dsc = null;
+        
+    } catch(PDOExcemption $e) {
+        echo $e->getMessage();
+    }
+    
+?>
+
