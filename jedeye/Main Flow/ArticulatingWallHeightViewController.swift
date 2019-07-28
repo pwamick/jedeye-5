@@ -11,6 +11,7 @@ import UIKit
 class ArticulatingWallHeightViewController: UIViewController, CarpenterDelegate {
     
     var promptText : String?
+    var carpenterMeasureExpected = false
     
     @IBOutlet weak var prompt : UILabel?
     @IBOutlet weak var txHeight : UITextField?
@@ -20,9 +21,15 @@ class ArticulatingWallHeightViewController: UIViewController, CarpenterDelegate 
         self.title = "Wall Height"
         self.prompt!.text = promptText
         
-        if let h = Session.surveyData?.surveySelections["WallHeight"] {
-            self.txHeight?.text = (h as! String)
+        if !carpenterMeasureExpected {
+            if let h = Session.surveyData?.surveySelections["WallHeight"] {
+                self.txHeight?.text = (h as! String)
+            }
+        } else {
+            carpenterMeasureExpected = false
         }
+        
+        self.navigationItem.rightBarButtonItem?.title = Session.surveyID
     }
     
     func DecimalMeasureReady(withMeasure: Double, BackID: String) {
@@ -41,6 +48,7 @@ class ArticulatingWallHeightViewController: UIViewController, CarpenterDelegate 
             Session.addToEquipmentSelectionDict(id: "WallHeight", value: self.txHeight!.text!)
             Session.setKVPair(key: "WallHeight", value: self.txHeight!.text!)
         case "WallToCarpSegue":
+            carpenterMeasureExpected = true
             let destVC = segue.destination as! CarpenterMeasureViewController
             destVC.backID = ""
             destVC.delegate = self

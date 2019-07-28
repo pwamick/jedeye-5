@@ -21,6 +21,7 @@ class MainTVController: UITableViewController, AsynchDataDelegate {
         super.viewWillAppear(animated)
         Session.delegate = self
         Session.getSurvey()
+        self.navigationItem.rightBarButtonItem?.title = Session.surveyID
     }
     
     func sessionReturnedWith(data: EntryType) {

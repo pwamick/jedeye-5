@@ -24,6 +24,7 @@ class EquipmentSelectionTVController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationItem.rightBarButtonItem?.title = Session.surveyID
     }
     
     @objc func goSurvey(sender:UIBarButtonItem) {

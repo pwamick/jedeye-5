@@ -209,12 +209,19 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
         print("&&Survey Saved, return code = " + data["returncode"]!)
         
         DispatchQueue.main.async {
-            //if self.btnSaveText == "Save"{
+            
+            if self.btnSaveText == "Add" {
+                let addAlert = UIAlertController(title: "Survey Added", message: "Survey \(Session.surveyID!) created and made the active survey.", preferredStyle: .alert)
+                
+                addAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
+                    let index = self.navigationController?.viewControllers[1] as! MainTVController
+                    self.navigationController?.popToViewController(index as UIViewController, animated: true)
+                }))
+                
+                self.present(addAlert, animated: true, completion: nil)
+            } else {
                 self.navigationController?.popViewController(animated: true)
-            /*} else {
-                let index = self.navigationController?.viewControllers[1] as! MainTVController
-                self.navigationController?.popToViewController(index as UIViewController, animated: true)
-            }*/
+            }
         }
     }
 

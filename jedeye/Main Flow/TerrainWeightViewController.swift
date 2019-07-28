@@ -31,6 +31,7 @@ class TerrainWeightViewController: UIViewController {
         if let w = Session.surveyData?.surveySelections["TerWeight"] {
             self.txTerrainWeight?.text = (w as! String)
         }
+        self.navigationItem.rightBarButtonItem?.title = Session.surveyID
     }
 
     // MARK: - Navigation

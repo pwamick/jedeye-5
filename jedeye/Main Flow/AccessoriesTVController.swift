@@ -16,6 +16,7 @@ class AccessoriesTVController: UITableViewController {
         super.viewWillAppear(animated)
         self.title = "Accessories"
         self.arrAccessories = self.arrAccessories?.sorted()
+        self.navigationItem.rightBarButtonItem?.title = Session.surveyID
     }
 
     // MARK: - Table view data source

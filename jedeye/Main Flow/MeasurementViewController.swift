@@ -32,6 +32,7 @@ class MeasurementViewController: UIViewController, CarpenterDelegate {
         if let angle = Session.surveyData?.surveySelections["MeasAngle"] {
             self.txAngle?.text = (angle as! String)
         }
+        self.navigationItem.rightBarButtonItem?.title = Session.surveyID
     }
     
     func DecimalMeasureReady(withMeasure: Double, BackID: String) {

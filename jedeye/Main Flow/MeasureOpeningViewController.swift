@@ -12,6 +12,7 @@ class MeasureOpeningViewController: UIViewController, CarpenterDelegate {
     
     var measureType : String?
     var promptText : String?
+    var carpenterMeasureExpected = false
     
     @IBOutlet weak var prompt : UILabel?
     @IBOutlet weak var txWidth : UITextField?
@@ -42,17 +43,22 @@ class MeasureOpeningViewController: UIViewController, CarpenterDelegate {
         self.title = "Opening"
         self.prompt!.text = promptText!
         
-        if let w = Session.surveyData?.surveySelections["OpeningWidth"] {
-            self.txWidth?.text = (w as! String)
+        if !carpenterMeasureExpected {
+            if let w = Session.surveyData?.surveySelections["OpeningWidth"] {
+                self.txWidth?.text = (w as! String)
+            }
+            if let h = Session.surveyData?.surveySelections["OpeningHeight"] {
+                self.txHeight?.text = (h as! String)
+            }
+        } else {
+            carpenterMeasureExpected = false
         }
-        if let h = Session.surveyData?.surveySelections["OpeningHeight"] {
-            self.txHeight?.text = (h as! String)
-        }
-        
+
+        self.navigationItem.rightBarButtonItem?.title = Session.surveyID
     }
     
     func DecimalMeasureReady(withMeasure: Double, BackID: String) {
-        //print("&&measure:\(withMeasure)")
+        print("&&measure:\(withMeasure)")
         switch BackID {
         case "WIDTH":
             self.txWidth?.text = String(withMeasure)
@@ -76,10 +82,12 @@ class MeasureOpeningViewController: UIViewController, CarpenterDelegate {
             Session.setKVPair(key: "OpeningHeight", value: self.txHeight!.text!)
             destVC!.promptText = Session.getFieldDataFrom(Session.questions!, ordinalPosition: nextOrdPos, colName: "description")
         case"OpeningWidthToCarpSegue":
+            carpenterMeasureExpected = true
             let destVC = segue.destination as! CarpenterMeasureViewController
             destVC.delegate = self
             destVC.backID = "WIDTH"
         case "OpeningHeightToCarpSegue":
+            carpenterMeasureExpected = true
             let destVC = segue.destination as! CarpenterMeasureViewController
             destVC.delegate = self
             destVC.backID = "HEIGHT"

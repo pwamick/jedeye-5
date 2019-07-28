@@ -47,6 +47,7 @@ class FiveHundredLbViewController: UIViewController {
                 self.isHeavy?.isOn = true
             }
         }
+        self.navigationItem.rightBarButtonItem?.title = Session.surveyID
     }
     
     // MARK: - Navigation

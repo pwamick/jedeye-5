@@ -18,6 +18,7 @@ class SubtypeTVController: UITableViewController, AsynchDataDelegate {
         self.title = "Power"
         self.displayStrings = Session.getSortedStrings(dict: self.subtypes, field: "displayname")
         tableView.reloadData()
+        self.navigationItem.rightBarButtonItem?.title = Session.surveyID
     }
     
     // MARK: - Table view data source

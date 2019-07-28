@@ -1907,6 +1907,7 @@
             <objects>
                 <navigationController id="v0K-Gp-qTV" customClass="NavController" customModule="jedeye" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hKQ-Qp-Act">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2128,9 +2129,9 @@
     <inferredMetricsTieBreakers>
         <segue reference="blo-UU-ZpG"/>
         <segue reference="nuU-zL-TUo"/>
-        <segue reference="bgg-v1-LWR"/>
-        <segue reference="oce-yn-7rc"/>
-        <segue reference="jfJ-Zy-waJ"/>
+        <segue reference="bvu-uW-ju1"/>
+        <segue reference="7mU-lL-lsi"/>
+        <segue reference="Cjr-1s-rwv"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.51343831839242549" green="0.073600129264034378" blue="0.0" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
 </document>

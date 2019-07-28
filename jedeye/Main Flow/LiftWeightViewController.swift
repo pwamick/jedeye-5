@@ -36,6 +36,7 @@ class LiftWeightViewController: UIViewController {
         if let lweight = Session.surveyData?.surveySelections["LiftWeight"] {
             self.txWeight?.text = (lweight as! String)
         }
+        self.navigationItem.rightBarButtonItem?.title = Session.surveyID
     }
     
     // MARK: - Navigation

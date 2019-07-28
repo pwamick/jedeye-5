@@ -25,6 +25,7 @@ class PowerViewController: UIViewController {
                 self.hasPower?.isOn = true
             }
         }
+        self.navigationItem.rightBarButtonItem?.title = Session.surveyID
     }
     
     // MARK: - Navigation
