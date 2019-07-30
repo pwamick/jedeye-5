@@ -8,23 +8,31 @@
 
 import UIKit
 
-class EquipmentSelectionTVController: UITableViewController {
+class EquipmentSelectionTVController: UITableViewController, AsynchDataDelegate {
     
-    var equipment : [String:String] = [:]
+    var equipment : EntryType = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "Equipment"
         
-        equipment["FL-183"] = "Example Boom Lift"
-        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Survey", style: .plain, target: self, action: #selector(goSurvey(sender:)))
+        Session.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.rightBarButtonItem?.title = Session.surveyID
+        Session.getRecommendations(surveyid: Session.surveyID!, surveytype: "", enditemqty: "0", note: "Version+1.0")
+    }
+    
+    func recommendationsReturned(data: EntryType) {
+        self.equipment = data
+        print("&&EquipData: \(self.equipment)")
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     @objc func goSurvey(sender:UIBarButtonItem) {
@@ -51,8 +59,10 @@ class EquipmentSelectionTVController: UITableViewController {
         let equipmentKeys = Array(self.equipment.keys).sorted()
         let thisKey = equipmentKeys[indexPath.row]
         
-        cell.lbManufacturer?.text = equipment[thisKey]
-        cell.lbModel?.text = thisKey
+        cell.lbManufacturer?.text = equipment[thisKey]!["manufacturer"]
+        cell.lbModel?.text = equipment[thisKey]!["modelno"]
+        cell.lbNotes?.text = equipment[thisKey]!["notes"]
+        cell.pdfPath = "https://www.ibeamma.com/jedeye/pdf/" + equipment[thisKey]!["linkpdf"]!
         
         return cell
     }
@@ -93,14 +103,23 @@ class EquipmentSelectionTVController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        switch segue.identifier {
+        case "EquipmentToPDFSegue":
+            let destVC = segue.destination as! PDFViewController
+            let btn = sender as! UIButton
+            let cell = btn.superview?.superview as! EquipmentCell
+            let pdfURL = cell.pdfPath 
+            
+            destVC.datasheetURL = pdfURL
+        default:
+            print("&&Unknown segue ID in Equipment VC")
+            
+        }
     }
-    */
+    
 
 }

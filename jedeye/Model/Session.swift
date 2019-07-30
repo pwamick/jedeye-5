@@ -198,8 +198,31 @@ class Session : NSObject {
         return equipmentQuery
     }
     
-    static func queryDBForEquipment() {
-        
+    static func getRecommendations(surveyid:String, surveytype:String, enditemqty:String, note:String) {
+        //print("&&Survey: getting questions")
+        let strURL = self.appSettings!["URL"]! + "recommend.php?siteid=\(surveyid)&" +             "surveytype=\(surveytype)&" +
+            "enditemqty=\(enditemqty)&" +
+            "note=\(note)"
+        print("&&\(strURL)")
+        let url = URL(string: strURL)!
+        URLSession.shared.dataTask(with: url, completionHandler: { data, response, error -> Void in
+            //print("&&Survey: in completion handler")
+            if error != nil {
+                print("&&No Connection:\(String(describing: error?.localizedDescription))")
+                return
+            }
+            do {
+                //print("&&Survey: in do in completion handler")
+                let jsonDecoder = JSONDecoder()
+                //print("&&Survey: jsonDecoder assigned")
+                let recommendations = try jsonDecoder.decode(EntryType.self, from: data!)
+                self.delegate?.recommendationsReturned(data: recommendations)
+                //print("&&Session: \(self.questions!)")
+                
+            } catch {
+                print("&&JSON Serialization error")
+            }
+        }).resume()
     }
     
     static func getFieldDataFrom(_ collection:EntryType,
@@ -415,6 +438,7 @@ class Session : NSObject {
     
     static func percentEncode(_ this:String) -> String {
         var retVal = this.replacingOccurrences(of: "%", with: "%25")
+        retVal = this.replacingOccurrences(of: " ", with: "%20")
         retVal = this.replacingOccurrences(of: "!", with: "%21")
         retVal = this.replacingOccurrences(of: "#", with: "%23")
         retVal = this.replacingOccurrences(of: "$", with: "%24")

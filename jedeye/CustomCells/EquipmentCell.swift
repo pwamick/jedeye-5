@@ -13,10 +13,15 @@ class EquipmentCell: UITableViewCell {
     @IBOutlet weak var lbManufacturer : UILabel?
     @IBOutlet weak var lbModel : UILabel?
     @IBOutlet weak var lbQuantity : UILabel?
+    @IBOutlet weak var lbNotes: UILabel?
+    
+    var pdfPath : String = ""
     
     @IBAction func stepperValueChanged(sender:UIStepper) {
         self.lbQuantity?.text = String(sender.value)
     }
+    
+    
     
     @IBAction func btnOrderClicked(sender:UIButton) {
         

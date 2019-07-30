@@ -24,6 +24,8 @@ protocol AsynchDataDelegate {
     func kvpairsfetched(data: [String:String])
     
     func surveyDeleted(data: [String:String])
+    
+    func recommendationsReturned(data:EntryType)
 }
 
 extension AsynchDataDelegate {
@@ -43,5 +45,7 @@ extension AsynchDataDelegate {
     func kvpairsfetched(data: [String:String]) {}
     
     func surveyDeleted(data: [String:String]) {}
+    
+    func recommendationsReturned(data:EntryType) {}
 }
 
