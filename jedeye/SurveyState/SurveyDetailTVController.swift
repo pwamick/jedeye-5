@@ -22,9 +22,14 @@ class SurveyDetailTVController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.navigationItem.rightBarButtonItems = []
+        let bbtnViewEquipment : UIBarButtonItem = UIBarButtonItem(title: "Equipment", style: .plain, target: self, action: #selector(viewEquipment(sender:)))
+        self.tabBarController?.navigationItem.rightBarButtonItems = [bbtnViewEquipment]
         self.tabBarController?.title = "View"
         self.tableView.reloadData()
+    }
+    
+    @objc func viewEquipment(sender:UIBarButtonItem) {
+        self.performSegue(withIdentifier: "ViewToEquipmentSegue", sender: sender)
     }
 
     // MARK: - Table view data source
