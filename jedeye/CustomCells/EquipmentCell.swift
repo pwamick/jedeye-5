@@ -16,15 +16,16 @@ class EquipmentCell: UITableViewCell {
     @IBOutlet weak var lbNotes: UILabel?
     
     var pdfPath : String = ""
+    var delegate : ConfirmDelegate?
     
     @IBAction func stepperValueChanged(sender:UIStepper) {
-        self.lbQuantity?.text = String(sender.value)
+        //stepper values are floats, convert to Int before String:
+        self.lbQuantity?.text = String(Int(sender.value))
     }
     
-    
-    
     @IBAction func btnOrderClicked(sender:UIButton) {
-        
+        // Delegate back to the ViewController for this:
+        delegate?.orderConfirmed(sender: self)
     }
 
     override func awakeFromNib() {

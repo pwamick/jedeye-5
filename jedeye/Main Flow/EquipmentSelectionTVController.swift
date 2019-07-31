@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EquipmentSelectionTVController: UITableViewController, AsynchDataDelegate {
+class EquipmentSelectionTVController: UITableViewController, AsynchDataDelegate, ConfirmDelegate {
     
     var equipment : EntryType = [:]
 
@@ -19,6 +19,7 @@ class EquipmentSelectionTVController: UITableViewController, AsynchDataDelegate 
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Survey", style: .plain, target: self, action: #selector(goSurvey(sender:)))
         Session.delegate = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +34,22 @@ class EquipmentSelectionTVController: UITableViewController, AsynchDataDelegate 
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+    }
+    
+    func orderConfirmed(sender: UITableViewCell) {
+        let cell = sender as! EquipmentCell
+        
+        let alertController = UIAlertController(title: "Confirm", message:"Please confirm entry of \(cell.lbQuantity!.text!) units of \(cell.lbModel!.text!)", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
+            // nothing to see here yet.
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction) in
+            // nothing to see here.
+        }))
+        
+        present(alertController, animated: true, completion: nil)
     }
      
     @objc func goSurvey(sender:UIBarButtonItem) {
@@ -66,6 +83,8 @@ class EquipmentSelectionTVController: UITableViewController, AsynchDataDelegate 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "equipmentCell", for: indexPath) as! EquipmentCell
+        
+        cell.delegate = self
 
         // Configure the cell...
         let equipmentKeys = sortBySize()

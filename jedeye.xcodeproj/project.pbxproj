@@ -11,6 +11,7 @@
 		1D3131E822EB430400A73219 /* deletesurvey.php in Resources */ = {isa = PBXBuildFile; fileRef = 1D3131E722EB430400A73219 /* deletesurvey.php */; };
 		1D3131EA22EF66BD00A73219 /* recommend.php in Resources */ = {isa = PBXBuildFile; fileRef = 1D3131E922EF66BD00A73219 /* recommend.php */; };
 		1D3131EC22EFFA1A00A73219 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3131EB22EFFA1A00A73219 /* PDFViewController.swift */; };
+		1D3131EE22F22C8F00A73219 /* ConfirmDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3131ED22F22C8F00A73219 /* ConfirmDelegate.swift */; };
 		1D33453D22A01B15004DB221 /* SurveyStateTBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33453C22A01B15004DB221 /* SurveyStateTBController.swift */; };
 		1D33453F22A01B57004DB221 /* SaveSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33453E22A01B57004DB221 /* SaveSurveyViewController.swift */; };
 		1D33454122A01B84004DB221 /* LoadSurveyTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33454022A01B84004DB221 /* LoadSurveyTVController.swift */; };
@@ -82,6 +83,7 @@
 		1D3131E722EB430400A73219 /* deletesurvey.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = deletesurvey.php; sourceTree = "<group>"; };
 		1D3131E922EF66BD00A73219 /* recommend.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = recommend.php; sourceTree = "<group>"; };
 		1D3131EB22EFFA1A00A73219 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		1D3131ED22F22C8F00A73219 /* ConfirmDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDelegate.swift; sourceTree = "<group>"; };
 		1D33453C22A01B15004DB221 /* SurveyStateTBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyStateTBController.swift; sourceTree = "<group>"; };
 		1D33453E22A01B57004DB221 /* SaveSurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSurveyViewController.swift; sourceTree = "<group>"; };
 		1D33454022A01B84004DB221 /* LoadSurveyTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadSurveyTVController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				1DF5C13D22B527DB00219698 /* SurveyData.swift */,
 				1D8C114722D51E6100F38275 /* CarpenterDelegate.swift */,
 				1D3E80A522D7A04C009B5628 /* AddressDelegate.swift */,
+				1D3131ED22F22C8F00A73219 /* ConfirmDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				1D73A28D22DDF754008255D5 /* SurveyInfoCell.swift in Sources */,
 				1D8C114222CBA5A300F38275 /* DropDownCell.swift in Sources */,
 				1D73A28522DCD779008255D5 /* LoadViewCell.swift in Sources */,
+				1D3131EE22F22C8F00A73219 /* ConfirmDelegate.swift in Sources */,
 				1D95F48022E89ACA00AF0BBC /* EquipmentSelectionTVController.swift in Sources */,
 				1D8C114622D5111800F38275 /* CarpenterMeasureViewController.swift in Sources */,
 				1D8C113922C6862600F38275 /* AddressViewController.swift in Sources */,

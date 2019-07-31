@@ -63,7 +63,7 @@ class AccessoriesTVController: UITableViewController {
         
         Session.setKVPairs(selectedAccessories)
         
-        
+        // wtf? 
         var response : EntryType = [:]
         response["accessories"] = selectedAccessories
     }

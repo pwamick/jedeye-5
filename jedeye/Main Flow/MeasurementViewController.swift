@@ -48,7 +48,7 @@ class MeasurementViewController: UIViewController, CarpenterDelegate {
             } else {
                 let alertController = UIAlertController(title: "Required Fields", message:"You must enter both the distance and angle to the target", preferredStyle: .alert)
                 
-                alertController.addAction(UIAlertAction(title: "Okee Dokee", style: .default, handler: { (action: UIAlertAction) in
+                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
                     // nothing to see here.
                 }))
                 
