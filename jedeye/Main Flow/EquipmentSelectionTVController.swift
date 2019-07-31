@@ -34,7 +34,7 @@ class EquipmentSelectionTVController: UITableViewController, AsynchDataDelegate 
             self.tableView.reloadData()
         }
     }
-    
+     
     @objc func goSurvey(sender:UIBarButtonItem) {
         performSegue(withIdentifier: "EquipmentToSurveySegue", sender: sender)
     }
@@ -50,13 +50,26 @@ class EquipmentSelectionTVController: UITableViewController, AsynchDataDelegate 
         // #warning Incomplete implementation, return the number of rows
         return self.equipment.count
     }
-
+    
+    func sortBySize() -> [String] {
+        var equipmentSize : [String:String] = [:]
+        var retVal : [String] = []
+        for (k, v) in self.equipment {
+            equipmentSize[k] = v["sortorder"]
+        }
+        retVal = Array(equipmentSize.keys).sorted(by: {
+            return equipmentSize[$0]! < equipmentSize[$1]!
+        })
+        
+        return retVal
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "equipmentCell", for: indexPath) as! EquipmentCell
 
         // Configure the cell...
-        let equipmentKeys = Array(self.equipment.keys).sorted()
+        let equipmentKeys = sortBySize()
+        print(equipmentKeys)
         let thisKey = equipmentKeys[indexPath.row]
         
         cell.lbManufacturer?.text = equipment[thisKey]!["manufacturer"]

@@ -29,7 +29,11 @@
                 $outstr .= "\"" . $r['inventoryid'] . "\":{";
                 $outstr .= "\"manufacturer\":\"" . $r['manufacturer'] . "\",";
                 $outstr .= "\"modelno\":\"" . $r['modelno'] . "\",";
-                $outstr .= "\"linkpdf\":\"" . $r['linkpdf'] . "\"},";
+                $outstr .= "\"notes\":\"" . $r['notes'] . "\",";
+                $outstr .= "\"linkpdf\":\"" . $r['linkpdf'] . "\",";
+                $outstr .= "\"sortorder\":\"" . $r['sortorder'] . "\",";
+                $outstr .= "\"exceptions\":\"" . $r['exceptions'] . "\",";
+                $outstr .= "\"ranking\":\"" . $r['ranking'] . "\"},";
             }
             $outstr .= "}";
             //get rid of the last trailing comma:
