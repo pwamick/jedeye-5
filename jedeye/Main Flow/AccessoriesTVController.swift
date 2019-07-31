@@ -60,10 +60,9 @@ class AccessoriesTVController: UITableViewController {
             Session.addToEquipmentSelectionDict(id: accCell!.accessory!.text!, value: (accCell!.isNeeded!.isOn ? "true" : "false"))
             selectedAccessories[accCell!.accessory!.text!] = (accCell!.isNeeded!.isOn ? "true" : "false")
         }
-        /*
-        Session.addToEquipmentSelectionDict(id: "Accessories", value: selectedAccessories)
+        
         Session.setKVPairs(selectedAccessories)
-        */
+        
         
         var response : EntryType = [:]
         response["accessories"] = selectedAccessories
