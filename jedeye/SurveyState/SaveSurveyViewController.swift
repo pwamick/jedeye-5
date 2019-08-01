@@ -75,19 +75,24 @@ class SaveSurveyViewController: UIViewController, AsynchDataDelegate, UITableVie
     
     @IBAction func saveButtonClicked(sender:UIButton) {
         if txName!.text != "" && txClient!.text != "" {
+            /* should only percent encode the URL:
             var clientText = Session.percentEncode(self.txClient!.text!)
             var nameText = Session.percentEncode(self.txName!.text!)
             let descText = Session.percentEncode(self.tvDescripton!.text!)
-            
+            */
+            //print("&&&desc = \(descText)")
+            var clientText = self.txClient!.text!
+            var nameText = self.txName!.text!
             clientText = clientText.prefix(1).uppercased() + clientText.lowercased().dropFirst()
             nameText = nameText.prefix(1).uppercased() + nameText.lowercased().dropFirst()
         
             Session.surveyData!.c_lname = clientText
             Session.surveyData!.s_lname = nameText
-            Session.surveyData!.desc = descText
+            //truncate the description to 255 characters:
+            Session.surveyData!.desc = String(self.tvDescripton!.text!.prefix(255))
             //if the user selects a contractor from the dropdown,
-            //there is a customer id. If not, make a customer id
-            //for this record:
+            //there is a customer id. If not, make the customer
+            //id NULL:
             if self.customerID == nil {
                 self.customerID = "NULL"
             }

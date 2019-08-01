@@ -82,7 +82,7 @@ class SurveyData : NSObject, CLLocationManagerDelegate{
         retVal += "empno=\(Session.usertkey!)"
         
         
-        retVal = retVal.replacingOccurrences(of: " ", with: "+")
+        retVal = Session.percentEncode(retVal)
         
         //print("&&QueryString:\(retVal)")
         

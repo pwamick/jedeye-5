@@ -1418,20 +1418,22 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmD-F9-jtA">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmD-F9-jtA">
                                             <rect key="frame" x="300" y="9" width="66" height="17"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="hmD-F9-jtA" firstAttribute="bottom" secondItem="Mal-hY-nFj" secondAttribute="bottom" id="9cU-m9-5He"/>
                                         <constraint firstItem="iCj-na-WHK" firstAttribute="leading" secondItem="VRC-gZ-G4W" secondAttribute="leadingMargin" id="BsV-Ul-cWg"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="iCj-na-WHK" secondAttribute="trailing" constant="67" id="CL5-SR-AGZ"/>
                                         <constraint firstItem="Mal-hY-nFj" firstAttribute="top" secondItem="VRC-gZ-G4W" secondAttribute="topMargin" constant="-6" id="NAC-OW-g9d"/>
                                         <constraint firstItem="iCj-na-WHK" firstAttribute="top" secondItem="Mal-hY-nFj" secondAttribute="bottom" constant="3" id="V36-9C-ekA"/>
                                         <constraint firstItem="iCj-na-WHK" firstAttribute="trailing" secondItem="Mal-hY-nFj" secondAttribute="trailing" id="WuC-du-GWe"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="hmD-F9-jtA" secondAttribute="trailing" constant="-7" id="Yjt-UP-EEo"/>
+                                        <constraint firstItem="hmD-F9-jtA" firstAttribute="leading" secondItem="Mal-hY-nFj" secondAttribute="trailing" constant="8" symbolic="YES" id="awb-dH-PQG"/>
                                         <constraint firstItem="iCj-na-WHK" firstAttribute="leading" secondItem="Mal-hY-nFj" secondAttribute="leading" id="oXc-OM-KHC"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -1518,11 +1520,11 @@
                                     <action selector="saveButtonClickedWithSender:" destination="Tk5-DR-xtG" eventType="touchUpInside" id="mag-Xq-BrC"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qjf-Do-AfA">
-                                <rect key="frame" x="16" y="403" width="343" height="215"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qjf-Do-AfA">
+                                <rect key="frame" x="16" y="354" width="343" height="215"/>
                                 <color key="backgroundColor" red="0.93914578049999997" green="0.69059199709999997" blue="0.36471382549999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="234" id="goe-2K-K11"/>
+                                    <constraint firstAttribute="height" constant="215" id="goe-2K-K11"/>
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.31581953470000002" blue="0.13653105230000001" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
@@ -1621,7 +1623,7 @@
                             <constraint firstItem="bm7-7K-qFh" firstAttribute="trailing" secondItem="MGk-t2-Aem" secondAttribute="trailingMargin" constant="-92" id="orh-lQ-3vx"/>
                             <constraint firstItem="19H-2w-c2A" firstAttribute="leading" secondItem="xLR-8Z-FhK" secondAttribute="leading" id="qWP-EW-7Bz"/>
                             <constraint firstItem="xLR-8Z-FhK" firstAttribute="trailing" secondItem="4d9-mD-Z5u" secondAttribute="trailing" id="thq-Q6-c2o"/>
-                            <constraint firstItem="qjf-Do-AfA" firstAttribute="top" secondItem="gS6-J1-xey" secondAttribute="bottom" constant="8" symbolic="YES" id="uZG-sh-kai"/>
+                            <constraint firstItem="qjf-Do-AfA" firstAttribute="top" secondItem="gS6-J1-xey" secondAttribute="bottom" constant="3" id="uZG-sh-kai"/>
                             <constraint firstItem="bm7-7K-qFh" firstAttribute="trailing" secondItem="elq-1v-m0M" secondAttribute="trailing" constant="-92" id="xYn-Sq-HaK"/>
                             <constraint firstItem="xLR-8Z-FhK" firstAttribute="leading" secondItem="4d9-mD-Z5u" secondAttribute="leading" id="xzF-5H-dbc"/>
                             <constraint firstItem="bm7-7K-qFh" firstAttribute="leading" secondItem="JOG-7m-eU5" secondAttribute="leading" id="za5-W4-2Up"/>
