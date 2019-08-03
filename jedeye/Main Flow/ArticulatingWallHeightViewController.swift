@@ -13,8 +13,8 @@ class ArticulatingWallHeightViewController: UIViewController, CarpenterDelegate 
     var promptText : String?
     var carpenterMeasureExpected = false
     
-    @IBOutlet weak var prompt : UILabel?
-    @IBOutlet weak var txHeight : UITextField?
+    @IBOutlet weak var prompt: UILabel?
+    @IBOutlet weak var txHeight: UITextField?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

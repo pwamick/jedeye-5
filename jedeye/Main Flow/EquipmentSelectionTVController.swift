@@ -32,6 +32,15 @@ class EquipmentSelectionTVController: UITableViewController, AsynchDataDelegate,
         self.equipment = data
         print("&&EquipData: \(self.equipment)")
         DispatchQueue.main.async {
+            if self.equipment.count == 0 {
+                let alertController = UIAlertController(title: "No Equipment", message:"No equipment meets reach requirements. If possible, move equipment placement closer to target and try again.", preferredStyle: .alert)
+                
+                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
+                    // nothing to see here yet.
+                }))
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
             self.tableView.reloadData()
         }
     }

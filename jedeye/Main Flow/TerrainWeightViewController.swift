@@ -11,9 +11,9 @@ import UIKit
 class TerrainWeightViewController: UIViewController {
     
     var promptText : String?
-    @IBOutlet weak var prompt : UILabel?
+    @IBOutlet weak var prompt: UILabel?
     
-    @IBOutlet weak var txTerrainWeight : UITextField?
+    @IBOutlet weak var txTerrainWeight: UITextField?
     
     @IBAction func btnNextClicked(sender:UIButton) {
         if Session.getSelection()["Type"] as! String != "Telehandler" {
