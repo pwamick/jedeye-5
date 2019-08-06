@@ -369,6 +369,30 @@ class Session : NSObject {
             }
         }).resume()
     }
+    
+    static func clearAllMeasurements(forSurvey:String, withNote:String) {
+        let note = withNote.replacingOccurrences(of: " ", with: "+")
+        let strURL = self.appSettings!["URL"]! + "clearmeasurements.php?surveyid=\(forSurvey)" +
+        "&note=\(note)"
+        print("&&kvpair url: \(strURL)")
+        let url = URL(string: strURL)!
+        URLSession.shared.dataTask(with: url, completionHandler: { data, response, error -> Void in
+            //print("&&Survey: in completion handler")
+            if error != nil {
+                print("&&No Connection:\(String(describing: error?.localizedDescription))")
+                return
+            }
+            //print("&&Survey: in do in completion handler: \(data!)")
+            
+            //let jsonDecoder = JSONDecoder()
+            //print("&&Survey: jsonDecoder assigned")
+            let success = [String(data: data!, encoding: .utf8)!]
+            //print("&&Session list for \(forUser): \(list)")
+            
+            self.delegate?.measurementsDeleted(data: success)
+            
+        }).resume()
+    }
 
     static func getSurveyList(forUser:String, filter:String, history:String, mindate:String) {
         let mdate = mindate.replacingOccurrences(of: " ", with: "+")

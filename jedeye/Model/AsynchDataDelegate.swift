@@ -26,6 +26,7 @@ protocol AsynchDataDelegate {
     func surveyDeleted(data: [String:String])
     
     func recommendationsReturned(data:EntryType)
+    func measurementsDeleted(data:[String])
 }
 
 extension AsynchDataDelegate {
@@ -47,5 +48,6 @@ extension AsynchDataDelegate {
     func surveyDeleted(data: [String:String]) {}
     
     func recommendationsReturned(data:EntryType) {}
+    func measurementsDeleted(data:[String]) {}
 }
 

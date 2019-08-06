@@ -101,8 +101,8 @@ class SurveyDetailTVController: UITableViewController {
             cell.lbOpeningHeight?.text = Session.surveyData?.surveySelections["OpeningHeight"] as? String
             cell.lbEquipmentWeight?.text = Session.surveyData?.surveySelections["TerWeight"] as? String
             cell.lbLiftGreaterThan500?.text = Session.surveyData?.surveySelections["gt500"] as? String
-            cell.lbMeasuredDistance?.text = Session.surveyData?.surveySelections["MeasDistance"] as? String
-            cell.lbMeasuredAngle?.text = Session.surveyData?.surveySelections["MeasAngle"] as? String
+            cell.lbMeasuredDistance?.text = Session.surveyData?.surveySelections["MeasDistance1"] as? String
+            cell.lbMeasuredAngle?.text = Session.surveyData?.surveySelections["MeasAngle1"] as? String
             cell.lbAccessoryAntiCrush?.text = Session.surveyData?.surveySelections["Anti-Crush Bar"] as? String
             cell.lbAccessoryDripDiaper?.text = Session.surveyData?.surveySelections["Drip Diaper"] as? String
             cell.lbAccessoryGlazingKit?.text = Session.surveyData?.surveySelections["Glazing Kit"] as? String

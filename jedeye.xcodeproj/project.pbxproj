@@ -190,11 +190,11 @@
 				1D52F28B2292F6E800A43448 /* FiveHundredLbViewController.swift */,
 				1D52F28E22930A8500A43448 /* PowerViewController.swift */,
 				1D8C114322CF9AAD00F38275 /* LiftWeightViewController.swift */,
-				1D52F29022930AC300A43448 /* MeasurementViewController.swift */,
 				1D52F292229326DE00A43448 /* AccessoriesTVController.swift */,
+				1D52F29022930AC300A43448 /* MeasurementViewController.swift */,
 				1D95F47F22E89ACA00AF0BBC /* EquipmentSelectionTVController.swift */,
-				1D3131EB22EFFA1A00A73219 /* PDFViewController.swift */,
 				1D8C114522D5111800F38275 /* CarpenterMeasureViewController.swift */,
+				1D3131EB22EFFA1A00A73219 /* PDFViewController.swift */,
 				1D793B1521FA07DF00E4C80C /* LaunchScreen.storyboard */,
 			);
 			path = "Main Flow";

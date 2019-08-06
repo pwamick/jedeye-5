@@ -103,6 +103,14 @@ class EquipmentSelectionTVController: UITableViewController, AsynchDataDelegate,
         cell.lbManufacturer?.text = equipment[thisKey]!["manufacturer"]
         cell.lbModel?.text = equipment[thisKey]!["modelno"]
         cell.lbNotes?.text = equipment[thisKey]!["notes"]
+        
+        //color the notes field if some other data is something:
+        /*
+        if something {
+            cell.lbNotes?.textColor = UIColor.blue
+        }
+        */
+        
         cell.pdfPath = "https://www.ibeamma.com/jedeye/pdf/" + equipment[thisKey]!["linkpdf"]!
         
         return cell
