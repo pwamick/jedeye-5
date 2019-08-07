@@ -9,5 +9,5 @@
 import UIKit
 
 protocol ConfirmDelegate {
-    func orderConfirmed(sender: UITableViewCell)
+    func orderConfirmed(sender: EquipmentCell)
 }

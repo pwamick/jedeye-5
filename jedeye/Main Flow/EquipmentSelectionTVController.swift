@@ -11,6 +11,7 @@ import UIKit
 class EquipmentSelectionTVController: UITableViewController, AsynchDataDelegate, ConfirmDelegate {
     
     var equipment : EntryType = [:]
+    var confirmCell : EquipmentCell?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,20 +46,9 @@ class EquipmentSelectionTVController: UITableViewController, AsynchDataDelegate,
         }
     }
     
-    func orderConfirmed(sender: UITableViewCell) {
-        let cell = sender as! EquipmentCell
-        
-        let alertController = UIAlertController(title: "Confirm", message:"Please confirm entry of \(cell.lbQuantity!.text!) units of \(cell.lbModel!.text!)", preferredStyle: .alert)
-        
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
-            // nothing to see here yet.
-        }))
-        
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction) in
-            // nothing to see here.
-        }))
-        
-        present(alertController, animated: true, completion: nil)
+    func orderConfirmed(sender: EquipmentCell) {
+        self.confirmCell = sender
+        performSegue(withIdentifier: "EquipmentToConfirmSegue", sender: self)
     }
      
     @objc func goSurvey(sender:UIBarButtonItem) {
@@ -164,6 +154,12 @@ class EquipmentSelectionTVController: UITableViewController, AsynchDataDelegate,
             let pdfURL = cell.pdfPath 
             
             destVC.datasheetURL = pdfURL
+        case "EquipmentToConfirmSegue":
+            let destVC = segue.destination as! ConfirmOrderViewController
+            destVC.manufacturer = self.confirmCell?.lbManufacturer?.text
+            destVC.model = self.confirmCell?.lbModel?.text
+            destVC.quantity = self.confirmCell?.lbQuantity?.text
+            
         default:
             print("&&Unknown segue ID in Equipment VC")
             

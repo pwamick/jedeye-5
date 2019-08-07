@@ -55,6 +55,7 @@
 		1D95F48022E89ACA00AF0BBC /* EquipmentSelectionTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D95F47F22E89ACA00AF0BBC /* EquipmentSelectionTVController.swift */; };
 		1D95F48222E89C5100AF0BBC /* EquipmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D95F48122E89C5100AF0BBC /* EquipmentCell.swift */; };
 		1D98E4D522887D5700E3C28D /* SubtypeTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D98E4D422887D5700E3C28D /* SubtypeTVController.swift */; };
+		1DA955C122FB0AEF00D31D21 /* ConfirmOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA955C022FB0AEF00D31D21 /* ConfirmOrderViewController.swift */; };
 		1DCC96E322A821990053A3CE /* File in Resources */ = {isa = PBXBuildFile; fileRef = 1DCC96E222A821990053A3CE /* File */; };
 		1DE4967E22905765006BEBD5 /* MeasureOpeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE4967D22905765006BEBD5 /* MeasureOpeningViewController.swift */; };
 		1DE4968222906F49006BEBD5 /* TerrainWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE4968122906F49006BEBD5 /* TerrainWeightViewController.swift */; };
@@ -133,6 +134,7 @@
 		1D95F47F22E89ACA00AF0BBC /* EquipmentSelectionTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentSelectionTVController.swift; sourceTree = "<group>"; };
 		1D95F48122E89C5100AF0BBC /* EquipmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentCell.swift; sourceTree = "<group>"; };
 		1D98E4D422887D5700E3C28D /* SubtypeTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtypeTVController.swift; sourceTree = "<group>"; };
+		1DA955C022FB0AEF00D31D21 /* ConfirmOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderViewController.swift; sourceTree = "<group>"; };
 		1DCC96E222A821990053A3CE /* File */ = {isa = PBXFileReference; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		1DE4967D22905765006BEBD5 /* MeasureOpeningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureOpeningViewController.swift; sourceTree = "<group>"; };
 		1DE4968122906F49006BEBD5 /* TerrainWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerrainWeightViewController.swift; sourceTree = "<group>"; };
@@ -193,8 +195,9 @@
 				1D52F292229326DE00A43448 /* AccessoriesTVController.swift */,
 				1D52F29022930AC300A43448 /* MeasurementViewController.swift */,
 				1D95F47F22E89ACA00AF0BBC /* EquipmentSelectionTVController.swift */,
-				1D8C114522D5111800F38275 /* CarpenterMeasureViewController.swift */,
 				1D3131EB22EFFA1A00A73219 /* PDFViewController.swift */,
+				1DA955C022FB0AEF00D31D21 /* ConfirmOrderViewController.swift */,
+				1D8C114522D5111800F38275 /* CarpenterMeasureViewController.swift */,
 				1D793B1521FA07DF00E4C80C /* LaunchScreen.storyboard */,
 			);
 			path = "Main Flow";
@@ -474,6 +477,7 @@
 				1D0089B92222DFA50057517D /* MainTVController.swift in Sources */,
 				1DF5C13E22B527DB00219698 /* SurveyData.swift in Sources */,
 				1D33454122A01B84004DB221 /* LoadSurveyTVController.swift in Sources */,
+				1DA955C122FB0AEF00D31D21 /* ConfirmOrderViewController.swift in Sources */,
 				1D73A28B22DDF611008255D5 /* SurveyAddressCell.swift in Sources */,
 				1D8C114022C7B62800F38275 /* BooleanCell.swift in Sources */,
 				1D33454B22A2C5D1004DB221 /* SurveyTypeViewController.swift in Sources */,
