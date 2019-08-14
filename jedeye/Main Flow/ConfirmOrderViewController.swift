@@ -13,6 +13,7 @@ class ConfirmOrderViewController: UIViewController {
     var manufacturer : String?
     var model : String?
     var quantity : String?
+    var inventoryid : String?
     
     @IBOutlet weak var lbPrompt : UILabel?
     @IBOutlet weak var dpvNeeded: UIDatePicker?
@@ -20,12 +21,17 @@ class ConfirmOrderViewController: UIViewController {
     
     @IBAction func btnConfirmClick(sender: UIButton) {
         let dateformatter = DateFormatter()
-        dateformatter.dateFormat = "yyyy/MM/dd"
+        dateformatter.dateFormat = "yyyy/MM/dd+HH:mm:ss"
         let needed = dateformatter.string(from: self.dpvNeeded!.date)
         let returning = dateformatter.string(from: self.dpvReturning!.date)
         let alert = UIAlertController(title: "Confirm", message: "Confirm the order of \(self.quantity!) units of \(self.manufacturer!) \(self.model!) to be delivered on \(needed) and returned on \(returning)?", preferredStyle: .alert)
+        Session.surveyData?.startdatetime = needed
+        Session.surveyData?.enddatetime = returning
+        Session.surveyData?.enditem = self.inventoryid!
+        Session.surveyData?.enditemqty = self.quantity!
         let actYes = UIAlertAction(title: "Yes", style: .default, handler: { (action:UIAlertAction) -> Void in
-            
+            Session.surveyData?.status = "submitted"
+            Session.saveSurvey(surveyType: "adhoc")
         })
         let actNo = UIAlertAction(title: "No", style: .default, handler: { (action:UIAlertAction) -> Void in
             

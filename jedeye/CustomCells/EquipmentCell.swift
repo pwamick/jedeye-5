@@ -16,6 +16,7 @@ class EquipmentCell: UITableViewCell {
     @IBOutlet weak var lbNotes: UILabel?
     
     var pdfPath : String = ""
+    var inventoryid : String = ""
     var delegate : ConfirmDelegate?
     
     @IBAction func stepperValueChanged(sender:UIStepper) {

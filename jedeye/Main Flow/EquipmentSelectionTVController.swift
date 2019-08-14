@@ -93,6 +93,7 @@ class EquipmentSelectionTVController: UITableViewController, AsynchDataDelegate,
         cell.lbManufacturer?.text = equipment[thisKey]!["manufacturer"]
         cell.lbModel?.text = equipment[thisKey]!["modelno"]
         cell.lbNotes?.text = equipment[thisKey]!["notes"]
+        cell.inventoryid = thisKey
         
         //color the notes field if some other data is something:
         /*
@@ -159,6 +160,7 @@ class EquipmentSelectionTVController: UITableViewController, AsynchDataDelegate,
             destVC.manufacturer = self.confirmCell?.lbManufacturer?.text
             destVC.model = self.confirmCell?.lbModel?.text
             destVC.quantity = self.confirmCell?.lbQuantity?.text
+            destVC.inventoryid = self.confirmCell?.inventoryid
             
         default:
             print("&&Unknown segue ID in Equipment VC")

@@ -274,7 +274,8 @@ class Session : NSObject {
     }
     
     static func surveyTypeDropDownContent(custType:String) {
-        let strURL = self.appSettings!["URL"]! + "surveytype.php?ctype=" + custType
+        let strURL = self.appSettings!["URL"]! + "surveytype.php?ctype=" + custType + "&userkey=" + self.usertkey!
+        print(strURL)
         let url = URL(string: strURL)!
         URLSession.shared.dataTask(with: url, completionHandler: { data, response, error -> Void in
             //print("&&Survey: in completion handler")
